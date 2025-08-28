@@ -1,33 +1,36 @@
-import { Layout, GitPullRequest, Box } from 'feather-icons-react'
+import { Layout, GitPullRequest, Box, Target, Move, Users, Smile } from 'feather-icons-react'
 import ProjectCard from './components/work/ProjectCard'
 import { projects } from './data/projects'
 import Container from './components/global/Container'
+import clsx from 'clsx'
+import { Climate_Crisis } from 'next/font/google'
 
 function SkillBox(props) {
   return (
-    <div className="flex flex-col items-center p-4">
+    <div className={clsx("flex flex-col p-4 outline outline-1 outline-gray-300", props.align === "left" ? "items-left" : "items-center")}>
       <props.icon />
-      <p>{props.text}</p>
+      <h3>{props.title}</h3>
+      {props.description && <p>{props.description}</p>}
     </div>
   )
 }
 
 export default function Home() {
   return (
-    <main>
+    <main className="flex flex-col gap-16">
       <Container>
         <section className="flex flex-col items-center">
           <h1>Jake Martin</h1>
-          <p>Designer / Developer / Maker</p>
+          <h2  className="font-climate-crisis text-8xl text-center">designer/<br/>developer/<br/>maker</h2>
         </section>
       </Container>
       
       <Container>
-        <section className='flex flex-col items-center'>
-          <div className="flex flex-row">
-            <SkillBox icon={Layout} text="I design powerful products." />
-            <SkillBox icon={GitPullRequest} text="I ship production code." />
-            <SkillBox icon={Box} text="I build elegant systems." />
+        <section>
+          <div className="grid grid-cols-3">
+            <SkillBox icon={Layout} align="right" title="I design powerful products." description="" />
+            <SkillBox icon={GitPullRequest} align="right" title="I ship production code." description="" />
+            <SkillBox icon={Box} align="right" title="I build elegant systems." description="" />
           </div>
         </section>
       </Container>
@@ -38,6 +41,37 @@ export default function Home() {
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
+          </div>
+        </section>
+      </Container>
+
+      <Container>
+        <section>
+          <div className="grid grid-cols-2">
+            <SkillBox 
+              icon={Target} 
+              align="left"
+              title="Intentionality"
+              description="I fixate on a shared vision and frame every step of the process towards achieving it. This means prioritizing only the most impactful activities that align with our outcomes."
+            />
+            <SkillBox 
+              icon={Move} 
+              align="left"
+              title="Experimentation"
+              description="Nothing is sacred to me. I question assumptions, explore new ideas, and iterate in search of the best solutions."
+            />
+            <SkillBox 
+              icon={Users} 
+              align="left"
+              title="Collaboration"
+              description="I believe we do our best work when we do it together. I strive to be a multiplier on my teams and I'm not afraid to blur the lines between roles."
+            />
+            <SkillBox 
+              icon={Smile} 
+              align="left"
+              title="Buoyancy"
+              description="All work and no play makes Jake a dull boy. I like to keep things light and inject a healthy dose of humor and energy into almost every situation."
+            />
           </div>
         </section>
       </Container>

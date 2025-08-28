@@ -4,7 +4,7 @@ export default function Container({ children, fullWidth = false }) {
   }
   
   return (
-    <div className="max-w-3xl mx-auto">
+    <div className="flex flex-col w-full max-w-3xl mx-auto">
       {children}
     </div>
   );
