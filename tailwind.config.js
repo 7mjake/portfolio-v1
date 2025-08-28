@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         'primary': '#006FFF',
+        'secondary': '#324359',
         'background': '#F6FCFF',
       },
       outlineWidth: {

@@ -21,7 +21,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`antialiased ${figtree.variable} font-figtree bg-background relative`}>
+      <body className={`antialiased ${figtree.variable} font-figtree bg-background text-secondary relative`}>
         <div
           className="absolute inset-0 pointer-events-none z-50 bg-[url('/images/noise-v2.png')] opacity-100 mix-blend-multiply bg-repeat"
           style={{

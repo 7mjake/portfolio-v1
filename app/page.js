@@ -5,16 +5,7 @@ import Container from './components/global/Container'
 import clsx from 'clsx'
 import Image from 'next/image'
 import HeroBackground from './components/work/HeroBackground'
-
-function SkillBox(props) {
-  return (
-    <div className={clsx("flex flex-col p-4 outline outline-3 outline-primary", props.align === "left" ? "items-left" : "items-center")}>
-      <props.icon className="text-primary size-10" />
-      <h3>{props.title}</h3>
-      {props.description && <p>{props.description}</p>}
-    </div>
-  )
-}
+import SkillBox from './components/global/SkillBox'
 
 export default function Home() {
   return (
