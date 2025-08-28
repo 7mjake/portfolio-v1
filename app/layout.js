@@ -2,6 +2,8 @@ import './globals.css'
 import Nav from './components/global/nav'
 import { Climate_Crisis, Figtree } from 'next/font/google'
 import Image from 'next/image'
+import Footer from './components/global/footer'
+
 const climateCrisis = Climate_Crisis({
   subsets: ['latin'],
   weight: '400'
@@ -31,6 +33,7 @@ export default function RootLayout({ children }) {
         </div>
         <Nav />
         {children}
+        <Footer />
       </body>
     </html>
   )
