@@ -15,7 +15,7 @@ export default function ProjectCard({ project }) {
                 className="w-1/2 object-cover"
             />
             <div className="flex flex-col w-1/2 p-8">
-                <h3 className="text-2xl font-climate-crisis">{project.title}</h3>
+                <h3 className="text-6xl font-climate-crisis">{project.title}</h3>
                 <p className="text-gray-500">{project.description}</p>
                 <div className="flex flex-row gap-2">
                     {project.tags.map((tag) => (

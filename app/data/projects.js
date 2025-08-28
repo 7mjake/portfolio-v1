@@ -3,7 +3,7 @@ export const projects = [
     id: 1,
     title: "Fleetio",
     description: "Cutting-edge technology for fleet management.",
-    image: "/images/fleetio-thumbnail.jpg",
+    image: "/images/placeholder.png",
     tags: ["Web", "Mobile", "AI", "B2B", "Coming soon..."],
     path: "/projects/fleetio"
   },
@@ -11,7 +11,7 @@ export const projects = [
     id: 2,
     title: "Dairy Queen",
     description: "Major updates to the Dairy Queen app and website that drive conversion, loyalty, and user satisfaction.",
-    image: "/images/dairy-queen-thumbnail.jpg",
+    image: "/images/placeholder.png",
     tags: ["Mobile", "Web", "B2C"],
     path: "/projects/dairy-queen"
   },
@@ -19,7 +19,7 @@ export const projects = [
     id: 3,
     title: "Domino's",
     description: "The next-gen store management system for the largest pizza chain in the US.",
-    image: "/images/dominos-thumbnail.jpg",
+    image: "/images/placeholder.png",
     tags: ["Web", "Enterprise", "Password required"],
     path: "/projects/dominos"
   },
@@ -27,7 +27,7 @@ export const projects = [
     id: 4,
     title: "BiteClub",
     description: "An iOS app that helps couples find a place to eat. Built from scratch by yours truly :)",
-    image: "/images/biteclub-thumbnail.jpg",
+    image: "/images/placeholder.png",
     tags: ["Mobile", "Development", "B2C"],
     path: "/projects/biteclub"
   },
@@ -35,7 +35,7 @@ export const projects = [
     id: 5,
     title: "Ascensus",
     description: "Redesigning a powerful tool that helps small business owners provide retirement savings for their employees.",
-    image: "/images/ascensus-thumbnail.jpg",
+    image: "/images/placeholder.png",
     tags: ["Web", "B2B"],
     path: "/projects/ascensus"
   },
@@ -43,7 +43,7 @@ export const projects = [
     id: 6,
     title: "Dexcom",
     description: "Design explorations for a revolutionary OTC diabetes management platform.",
-    image: "/images/dexcom-thumbnail.jpg",
+    image: "/images/placeholder.png",
     tags: ["Mobile", "B2C", "Password required"],
     path: "/projects/dexcom"
   }
