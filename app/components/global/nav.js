@@ -1,12 +1,14 @@
+import Link from 'next/link'
+
 export default function Nav() {
     return (
-        <div class="flex justify-between m-4">
-            <a href="/">Logo</a>
+        <div className="flex justify-between m-4">
+            <Link href="/">Logo</Link>
             <nav>
-                <a href="/">Work</a>
-                <a href="/fun">Fun</a>
-                <a href="/about">About</a>
-                <a href="/resume">Resume</a>
+                <Link href="/">Work</Link>
+                <Link href="/fun">Fun</Link>
+                <Link href="/about">About</Link>
+                <Link href="/resume">Resume</Link>
             </nav>
         </div>
     )
