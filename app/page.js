@@ -2,8 +2,6 @@ import { Layout, GitPullRequest, Box, Target, Move, Users, Smile } from 'feather
 import ProjectCard from './components/work/ProjectCard'
 import { projects } from './data/projects'
 import Container from './components/global/Container'
-import clsx from 'clsx'
-import Image from 'next/image'
 import HeroBackground from './components/work/HeroBackground'
 import SkillBox from './components/global/SkillBox'
 
