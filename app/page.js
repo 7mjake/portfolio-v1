@@ -4,6 +4,7 @@ import { projects } from './data/projects'
 import Container from './components/global/Container'
 import clsx from 'clsx'
 import Image from 'next/image'
+import UnicornHero from './components/work/UnicornHero'
 
 function SkillBox(props) {
   return (
@@ -18,7 +19,13 @@ function SkillBox(props) {
 export default function Home() {
   return (
     <main className="flex flex-col gap-40 py-40">
-      <Image src='/images/shadows.png' alt='Shadows' width={1440} height={1200} className='absolute top-0 left-0 z-10 w-full opacity-75 mix-blend-multiply pointer-events-none' />
+      {/* <Image src='/images/shadows.png' alt='Shadows' width={1440} height={1200} className='absolute top-0 left-0 z-10 w-full opacity-75 mix-blend-multiply pointer-events-none' /> */}
+      <div className='absolute flex flex-col top-0 left-0 z-10 w-full opacity-75 mix-blend-multiply pointer-events-none'>
+        <div className='z-0'>
+          <UnicornHero />
+        </div>
+        <div className='absolute bg-gradient-to-t from-background via-background z-10 h-full w-full' />
+      </div>
       <Container>
         <section className="flex flex-col items-center gap-10">
           <h1 className="text-3xl text-primary">Jake Martin</h1>
