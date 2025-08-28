@@ -8,7 +8,6 @@ import SkillBox from './components/global/SkillBox'
 export default function Home() {
   return (
     <main className="flex flex-col gap-40 py-40">
-      {/* <Image src='/images/shadows.png' alt='Shadows' width={1440} height={1200} className='absolute top-0 left-0 z-10 w-full opacity-75 mix-blend-multiply pointer-events-none' /> */}
       <HeroBackground />
       <Container>
         <section className="flex flex-col items-center gap-10">
