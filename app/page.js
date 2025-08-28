@@ -58,7 +58,7 @@ export default function Home() {
             </SkillBox>
             <SkillBox icon={Users} align="left">
               <h3 className="text-2xl font-bold text-primary">Collaboration</h3>
-              <p className="text-lg">I believe we do our best work when we do it together. I strive to be a multiplier on my teams and I'm not afraid to blur the lines between roles.</p>
+              <p className="text-lg">I believe we do our best work when we do it together. I strive to be a multiplier on my teams and I&apos;m not afraid to blur the lines between roles.</p>
             </SkillBox>
             <SkillBox icon={Smile} align="left">
               <h3 className="text-2xl font-bold text-primary">Buoyancy</h3>

@@ -1,6 +1,7 @@
 import Container from './Container'
 import JmLogo from './svgs/jm-logo'
 import { ArrowUpRight } from 'feather-icons-react'
+import Link from 'next/link'
 
 export default function Footer() {
     return (
@@ -13,16 +14,16 @@ export default function Footer() {
                 </div>
                 <div className='flex flex-1 flex-col gap-5'>
                     <h3 className='text-lg font-bold text-primary'>Contact</h3>
-                    <a href="https://www.linkedin.com/in/jakemartin-design//" className='flex items-center gap-2'>LinkedIn <ArrowUpRight className='size-4' /></a>
-                    <a href="https://github.com/7mjake" className='flex items-center gap-2'>GitHub <ArrowUpRight className='size-4' /></a>
-                    <a href="mailto:jake@jake.com" className='flex items-center gap-2'>me@jakemartin.design</a>
+                    <Link href="https://www.linkedin.com/in/jakemartin-design//" className='flex items-center gap-2'>LinkedIn <ArrowUpRight className='size-4' /></Link>
+                    <Link href="https://github.com/7mjake" className='flex items-center gap-2'>GitHub <ArrowUpRight className='size-4' /></Link>
+                    <Link href="mailto:jake@jake.com" className='flex items-center gap-2'>me@jakemartin.design</Link>
                 </div>
                 <div className='flex flex-1 flex-col gap-5'>
                     <h3 className='text-lg font-bold text-primary'>Navigation</h3>
-                    <a href="/">Work</a>
-                    <a href="/fun">Fun</a>
-                    <a href="/about">About</a>
-                    <a href="/resume">Resume</a>
+                    <Link href="/">Work</Link>
+                    <Link href="/fun">Fun</Link>
+                    <Link href="/about">About</Link>
+                    <Link href="/resume">Resume</Link>
                 </div>
             </footer>
         </Container>
