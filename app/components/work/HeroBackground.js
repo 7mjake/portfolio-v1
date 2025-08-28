@@ -2,7 +2,7 @@ import UnicornHero from './UnicornHero'
 
 export default function HeroBackground() {
     return (
-        <div className='fixed flex flex-col top-0 left-0 z-10 w-full opacity-100 mix-blend-multiply pointer-events-none'>
+        <div className='absolute flex flex-col top-0 left-0 z-10 w-full opacity-0 mix-blend-multiply pointer-events-none animate-[fadeIn_2s_ease-in-out_0.5s_forwards]'>
             <div className='z-0'>
                 <UnicornHero />
             </div>
