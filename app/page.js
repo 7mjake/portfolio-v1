@@ -6,8 +6,8 @@ import clsx from 'clsx'
 
 function SkillBox(props) {
   return (
-    <div className={clsx("flex flex-col p-4 outline outline-1 outline-gray-300", props.align === "left" ? "items-left" : "items-center")}>
-      <props.icon />
+    <div className={clsx("flex flex-col p-4 outline outline-3 outline-primary", props.align === "left" ? "items-left" : "items-center")}>
+      <props.icon className="text-primary size-10" />
       <h3>{props.title}</h3>
       {props.description && <p>{props.description}</p>}
     </div>
@@ -16,17 +16,17 @@ function SkillBox(props) {
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-16">
+    <main className="flex flex-col gap-40 mt-40 mb-40">
       <Container>
-        <section className="flex flex-col items-center">
-          <h1>Jake Martin</h1>
-          <h2  className="font-climate-crisis text-8xl text-center">designer/<br/>developer/<br/>maker</h2>
+        <section className="flex flex-col items-center gap-10">
+          <h1 className="text-3xl text-primary">Jake Martin</h1>
+          <h2  className="font-climate-crisis text-8xl text-center text-primary">designer/<br/>developer/<br/>maker</h2>
         </section>
       </Container>
       
       <Container>
         <section>
-          <div className="grid grid-cols-3 gap-[1px]">
+          <div className="grid grid-cols-3 gap-[3px]">
             <SkillBox icon={Layout} align="right" title="I design powerful products." description="" />
             <SkillBox icon={GitPullRequest} align="right" title="I ship production code." description="" />
             <SkillBox icon={Box} align="right" title="I build elegant systems." description="" />
@@ -36,7 +36,7 @@ export default function Home() {
       
       <Container>
         <section>
-          <div className="flex flex-col outline outline-1 outline-gray-300 gap-[1px]">
+          <div className="flex flex-col outline outline-3 outline-primary gap-[3px]">
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -47,7 +47,7 @@ export default function Home() {
       <Container>
         <section>
           <h2>My core values</h2>
-          <div className="grid grid-cols-2 gap-[1px]">
+          <div className="grid grid-cols-2 gap-[3px]">
             <SkillBox 
               icon={Target} 
               align="left"

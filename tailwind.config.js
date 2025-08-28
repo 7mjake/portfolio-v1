@@ -7,6 +7,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'primary': '#006FFF',
+      },
+      outlineWidth: {
+        3: '3px',
+      },
       fontFamily: {
         'climate-crisis': ['Climate Crisis', 'sans-serif'],
         'figtree': ['var(--font-figtree)', 'sans-serif'],
