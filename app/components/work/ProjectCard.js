@@ -4,7 +4,7 @@ import clsx from 'clsx'
 export default function ProjectCard({ project }) {
     return (
         <div className={clsx(
-            "flex flex-row border-2 border-gray-300 rounded-md p-4",
+            "flex flex-row outline outline-1 outline-gray-300 p-4]",
             project.id % 2 === 0 && "flex-row-reverse"
         )}>
             <Image 

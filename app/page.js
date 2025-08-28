@@ -37,7 +37,7 @@ export default function Home() {
       
       <Container>
         <section>
-          <div>
+          <div className="flex flex-col outline outline-1 outline-gray-300 gap-[1px]">
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
@@ -47,6 +47,7 @@ export default function Home() {
 
       <Container>
         <section>
+          <h2>My core values</h2>
           <div className="grid grid-cols-2">
             <SkillBox 
               icon={Target} 
@@ -70,7 +71,7 @@ export default function Home() {
               icon={Smile} 
               align="left"
               title="Buoyancy"
-              description="All work and no play makes Jake a dull boy. I like to keep things light and inject a healthy dose of humor and energy into almost every situation."
+              description="All work and no play makes Jake a dull boy. I like to keep things light and inject a healthy dose of humor and energy into everything I do."
             />
           </div>
         </section>
