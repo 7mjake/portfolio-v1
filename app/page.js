@@ -19,9 +19,15 @@ export default function Home() {
       <Container>
         <section>
           <div className="grid grid-cols-3 gap-[3px]">
-            <SkillBox icon={Layout} align="right" title="I design powerful products." description="" />
-            <SkillBox icon={GitPullRequest} align="right" title="I ship production code." description="" />
-            <SkillBox icon={Box} align="right" title="I build elegant systems." description="" />
+            <SkillBox icon={Layout} align="right">
+              <h3 className='text-3xl'>I design powerful products.</h3>
+            </SkillBox>
+            <SkillBox icon={GitPullRequest} align="right">
+              <h3 className='text-3xl'>I ship production code.</h3>
+            </SkillBox>
+            <SkillBox icon={Box} align="right">
+              <h3 className='text-3xl'>I build elegant systems.</h3>
+            </SkillBox>
           </div>
         </section>
       </Container>
@@ -38,32 +44,24 @@ export default function Home() {
 
       <Container>
         <section>
-          <h2>My core values</h2>
+          <h2 className='text-4xl font-bold text-primary mb-6'>My core values</h2>
           <div className="grid grid-cols-2 gap-[3px]">
-            <SkillBox
-              icon={Target}
-              align="left"
-              title="Intentionality"
-              description="I fixate on a shared vision and frame every step of the process towards achieving it. This means prioritizing only the most impactful activities that align with our outcomes."
-            />
-            <SkillBox
-              icon={Move}
-              align="left"
-              title="Experimentation"
-              description="Nothing is sacred to me. I question assumptions, explore new ideas, and iterate in search of the best solutions."
-            />
-            <SkillBox
-              icon={Users}
-              align="left"
-              title="Collaboration"
-              description="I believe we do our best work when we do it together. I strive to be a multiplier on my teams and I'm not afraid to blur the lines between roles."
-            />
-            <SkillBox
-              icon={Smile}
-              align="left"
-              title="Buoyancy"
-              description="All work and no play makes Jake a dull boy. I like to keep things light and inject a healthy dose of humor and energy into everything I do."
-            />
+            <SkillBox icon={Target} align="left">
+              <h3 className="text-2xl font-bold text-primary">Intentionality</h3>
+              <p className="text-lg">I fixate on a shared vision and frame every step of the process towards achieving it. This means prioritizing only the most impactful activities that align with our outcomes.</p>
+            </SkillBox>
+            <SkillBox icon={Move} align="left">
+              <h3 className="text-2xl font-bold text-primary">Experimentation</h3>
+              <p className="text-lg">Nothing is sacred to me. I question assumptions, explore new ideas, and iterate in search of the best solutions.</p>
+            </SkillBox>
+            <SkillBox icon={Users} align="left">
+              <h3 className="text-2xl font-bold text-primary">Collaboration</h3>
+              <p className="text-lg">I believe we do our best work when we do it together. I strive to be a multiplier on my teams and I'm not afraid to blur the lines between roles.</p>
+            </SkillBox>
+            <SkillBox icon={Smile} align="left">
+              <h3 className="text-2xl font-bold text-primary">Buoyancy</h3>
+              <p className="text-lg">All work and no play makes Jake a dull boy. I like to keep things light and inject a healthy dose of humor and energy into everything I do.</p>
+            </SkillBox>
           </div>
         </section>
       </Container>
