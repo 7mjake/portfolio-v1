@@ -3,12 +3,14 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    './app/**/*.{js,ts,jsx,mdx}',
   ],
   theme: {
     extend: {
       fontFamily: {
         'climate-crisis': ['Climate Crisis', 'sans-serif'],
+        'figtree': ['var(--font-figtree)', 'sans-serif'],
+        'sans': ['var(--font-figtree)', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

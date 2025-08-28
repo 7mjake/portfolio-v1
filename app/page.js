@@ -3,7 +3,6 @@ import ProjectCard from './components/work/ProjectCard'
 import { projects } from './data/projects'
 import Container from './components/global/Container'
 import clsx from 'clsx'
-import { Climate_Crisis } from 'next/font/google'
 
 function SkillBox(props) {
   return (
@@ -27,7 +26,7 @@ export default function Home() {
       
       <Container>
         <section>
-          <div className="grid grid-cols-3">
+          <div className="grid grid-cols-3 gap-[1px]">
             <SkillBox icon={Layout} align="right" title="I design powerful products." description="" />
             <SkillBox icon={GitPullRequest} align="right" title="I ship production code." description="" />
             <SkillBox icon={Box} align="right" title="I build elegant systems." description="" />
@@ -48,7 +47,7 @@ export default function Home() {
       <Container>
         <section>
           <h2>My core values</h2>
-          <div className="grid grid-cols-2">
+          <div className="grid grid-cols-2 gap-[1px]">
             <SkillBox 
               icon={Target} 
               align="left"
