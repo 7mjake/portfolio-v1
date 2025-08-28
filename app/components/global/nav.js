@@ -1,7 +1,9 @@
 import Link from 'next/link'
+import Container from './Container'
 
 export default function Nav() {
     return (
+        <Container>
         <div className="flex justify-between m-4">
             <Link href="/">Logo</Link>
             <nav>
@@ -11,5 +13,6 @@ export default function Nav() {
                 <Link href="/resume">Resume</Link>
             </nav>
         </div>
+        </Container>
     )
 }
