@@ -9,7 +9,7 @@ export default function Nav() {
         <Container>
             <div className="flex justify-between pt-6 text-primary">
                 <Link href="/">
-                    <JmLogo className='fill-primary' />
+                    <JmLogo className='fill-primary h-7 py-1' />
                 </Link>
                 <nav className='flex gap-6'>
                     <Link href="/">Work</Link>
