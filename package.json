@@ -9,10 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@react-three/postprocessing": "^3.0.4",
     "clsx": "^2.1.1",
     "feather-icons": "^4.29.2",
     "feather-icons-react": "^0.9.0",
     "next": "15.5.2",
+    "postprocessing": "^6.37.7",
     "react": "19.1.1",
     "react-dom": "19.1.1"
   },

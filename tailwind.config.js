@@ -9,6 +9,7 @@ module.exports = {
     extend: {
       colors: {
         'primary': '#006FFF',
+        'background': '#F6FCFF',
       },
       outlineWidth: {
         3: '3px',
