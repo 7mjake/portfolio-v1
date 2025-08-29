@@ -13,7 +13,9 @@ export default function UnicornHero() {
         altText="Animated background scene"
         ariaLabel="Animated background scene"
         className="opacity-30"
-        lazyLoad={true}
+        showPlaceholderWhileLoading={true}
+        placeholderClassName="bg-white"
+        lazyLoad={false}
         production={true}
       />
     </div>
