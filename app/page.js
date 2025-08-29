@@ -4,10 +4,12 @@ import { projects } from './data/projects'
 import Container from './components/global/Container'
 import HeroBackground from './components/work/HeroBackground'
 import SkillBox from './components/global/SkillBox'
+import Image from 'next/image'
 
 export default function Home() {
   return (
     <main className="flex flex-col gap-40 py-40">
+      <Image src="/images/noise-hero-dark.png" alt="Work Hero" width={1000} height={1000} className="absolute w-full bg-center -z-50 top-0 pointer-events-none hidden dark:block " />
       <HeroBackground />
       <Container>
         <section className="flex flex-col items-center gap-10">

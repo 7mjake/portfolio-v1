@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
       <body className={`antialiased ${figtree.variable} ${climateCrisis.variable} font-figtree bg-background text-secondary relative`}>
         <ThemeProvider>
           <div
-            className="absolute inset-0 pointer-events-none z-50 bg-[url('/images/noise-v2.png')] opacity-75 dark:opacity-100 mix-blend-multiply bg-repeat"
+            className="absolute inset-0 pointer-events-none z-50 bg-[url('/images/bg-noise.png')] opacity-75 dark:opacity-100 mix-blend-multiply dark:mix-blend-soft-light bg-repeat"
             style={{
               backgroundSize: '600px 600px',
             }}

@@ -12,7 +12,7 @@ export default function UnicornHero() {
         fps={30}
         altText="Animated background scene"
         ariaLabel="Animated background scene"
-        className="opacity-30"
+        className="opacity-30 dark:opacity-75"
         showPlaceholderWhileLoading={true}
         placeholderClassName="bg-white"
         lazyLoad={false}
