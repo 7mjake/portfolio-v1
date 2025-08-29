@@ -11,9 +11,10 @@
 
     --noise-size: 900px;
 
-    --font-climate-crisis: Climate Crisis, sans-serif;
+    --font-climate-crisis: var(--font-climate-crisis), sans-serif;
     --font-figtree: var(--font-figtree), sans-serif;
-    --font-sans: var(--font-figtree), sans-serif;
+    --font-dm-mono: var(--font-dm-mono), sans-serif;
+    --font-pixelify-sans: var(--font-pixelify-sans), sans-serif;
 
     --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
     --background-image-gradient-conic: conic-gradient(from 180deg at 50% 50%,

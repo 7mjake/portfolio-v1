@@ -21,7 +21,7 @@ export default function Home() {
       <Container>
         <section className="flex flex-col items-center gap-10">
           <h1 className="text-3xl text-primary">Jake Martin</h1>
-          <h2 className="font-climate-crisis text-8xl text-center text-primary mb-1">designer/<br />developer/<br />maker</h2>
+          <h2 className="font-dm-mono font-medium text-9xl text-center text-primary mb-1 ">designer/<br />developer/<br />maker</h2>
 
           <h3 className="text-3xl text-primary">NYC</h3>
         </section>
