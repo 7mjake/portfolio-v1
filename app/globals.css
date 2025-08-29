@@ -12,8 +12,14 @@
     }
 }
 
-:root {
+.light {
     --primary: 0, 111, 255;
     --secondary: 50, 67, 89;
     --background: 246, 252, 255;
+}
+
+.dark {
+    --primary: 75, 144, 255;
+    --secondary: 204, 223, 255;
+    --background: 22, 26, 34;
 }
