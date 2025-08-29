@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import clsx from 'clsx'
+import { Lock } from 'feather-icons-react'
 
 export default function ProjectCard({ project }) {
     return (
@@ -20,10 +21,11 @@ export default function ProjectCard({ project }) {
             <div className="flex flex-col w-1/2 p-8 justify-center gap-6">
                 <h3 className="text-6xl font-dm-mono font-medium text-primary">{project.title}</h3>
                 <p className="text-lg">{project.description}</p>
-                <div className="flex flex-row gap-[3px]">
+                <div className="flex flex-wrap gap-[3px]">
                     {project.tags.map((tag) => (
                         <span className="text-primary font-medium outline-solid outline-3 outline-primary px-2" key={tag}>{tag}</span>
                     ))}
+                    {project.locked && <span className="text-primary font-medium outline-solid outline-3 outline-primary px-2 flex flex-row gap-2 items-center"><Lock className="w-3 h-3" /> Password required</span>}
                 </div>
             </div>
         </div>
