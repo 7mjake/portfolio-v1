@@ -9,7 +9,14 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <main className="flex flex-col gap-40 py-40">
-      <Image src="/images/noise-hero-dark.png" alt="Work Hero" width={1000} height={1000} className="absolute w-full bg-center -z-50 top-0 pointer-events-none hidden dark:block " />
+      <div
+        className="absolute w-full h-[1000px] bg-center -z-50 top-0 pointer-events-none hidden dark:block"
+        style={{
+          backgroundImage: "url('/images/noise-hero-dark.png')",
+          backgroundSize: 'var(--noise-size) var(--noise-size)',
+        }}
+        aria-hidden="true"
+      />
       <HeroBackground />
       <Container>
         <section className="flex flex-col items-center gap-10">

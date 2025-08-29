@@ -3,21 +3,21 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-  --color-primary: rgba(var(--primary));
-  --color-secondary: rgba(var(--secondary));
-  --color-background: rgba(var(--background));
+    --color-primary: rgba(var(--primary));
+    --color-secondary: rgba(var(--secondary));
+    --color-background: rgba(var(--background));
 
-  --outline-width-3: 3px;
+    --outline-width-3: 3px;
 
-  --font-climate-crisis: Climate Crisis, sans-serif;
-  --font-figtree: var(--font-figtree), sans-serif;
-  --font-sans: var(--font-figtree), sans-serif;
+    --noise-size: 900px;
 
-  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-  --background-image-gradient-conic: conic-gradient(
-    from 180deg at 50% 50%,
-    var(--tw-gradient-stops)
-  );
+    --font-climate-crisis: Climate Crisis, sans-serif;
+    --font-figtree: var(--font-figtree), sans-serif;
+    --font-sans: var(--font-figtree), sans-serif;
+
+    --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+    --background-image-gradient-conic: conic-gradient(from 180deg at 50% 50%,
+            var(--tw-gradient-stops));
 }
 
 /*
@@ -29,13 +29,14 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
 }
 
 @keyframes fadeIn {
