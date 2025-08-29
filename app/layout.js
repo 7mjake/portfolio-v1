@@ -1,8 +1,10 @@
+'use client'
+
 import './globals.css'
 import Nav from './components/global/nav'
 import { Climate_Crisis, Figtree } from 'next/font/google'
-import Image from 'next/image'
 import Footer from './components/global/footer'
+import ThemeProvider from './components/global/ThemeProvider'
 
 const climateCrisis = Climate_Crisis({
   subsets: ['latin'],
@@ -15,25 +17,22 @@ const figtree = Figtree({
   variable: '--font-figtree'
 })
 
-export const metadata = {
-  title: 'Jake Martin',
-  description: 'Designer / Developer / Maker',
-}
-
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`antialiased ${figtree.variable} font-figtree bg-background text-secondary relative dark`}>
-        <div
-          className="absolute inset-0 pointer-events-none z-50 bg-[url('/images/noise-v2.png')] opacity-75 mix-blend-darken bg-repeat"
-          style={{
-            backgroundSize: '600px 600px',
-          }}
-        >
-        </div>
-        <Nav />
-        {children}
-        <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <body className={`antialiased ${figtree.variable} ${climateCrisis.variable} font-figtree bg-background text-secondary relative`}>
+        <ThemeProvider>
+          <div
+            className="absolute inset-0 pointer-events-none z-50 bg-[url('/images/noise-v2.png')] opacity-75 dark:opacity-100 mix-blend-multiply bg-repeat"
+            style={{
+              backgroundSize: '600px 600px',
+            }}
+          >
+          </div>
+          <Nav />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   )
