@@ -11,3 +11,9 @@
         opacity: 1;
     }
 }
+
+:root {
+    --primary: 0, 111, 255;
+    --secondary: 50, 67, 89;
+    --background: 246, 252, 255;
+}

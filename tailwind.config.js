@@ -8,9 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'primary': '#006FFF',
-        'secondary': '#324359',
-        'background': '#F6FCFF',
+        primary: 'rgba(var(--primary))',
+        secondary: 'rgba(var(--secondary))',
+        background: 'rgba(var(--background))',
       },
       outlineWidth: {
         3: '3px',
