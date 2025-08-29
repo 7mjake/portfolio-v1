@@ -38,7 +38,7 @@ export default function Home() {
 
       <Container>
         <section>
-          <div className="flex flex-col outline outline-3 outline-primary gap-[3px]">
+          <div className="flex flex-col outline-solid outline-3 outline-primary gap-[3px]">
             {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}

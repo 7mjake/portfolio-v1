@@ -6,11 +6,11 @@ export default function HeroBackground() {
             <div className='z-0'>
                 <UnicornHero />
             </div>
-            {/* <div className='absolute bg-gradient-to-t from-white h-full w-full' /> */}
+            {/* <div className='absolute bg-linear-to-t from-white h-full w-full' /> */}
 
-            <div className='absolute bottom-0 bg-gradient-to-t from-white h-[100px] w-full' />
-            <div className='absolute bottom-0 bg-gradient-to-t from-white h-[200px] w-full' />
-            <div className='absolute bottom-0 bg-gradient-to-t from-white h-[300px] w-full' />
+            <div className='absolute bottom-0 bg-linear-to-t from-white h-[100px] w-full' />
+            <div className='absolute bottom-0 bg-linear-to-t from-white h-[200px] w-full' />
+            <div className='absolute bottom-0 bg-linear-to-t from-white h-[300px] w-full' />
         </div>
     )
 }
