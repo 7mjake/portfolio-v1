@@ -8,6 +8,8 @@ export default function HeroBackground() {
             </div>
             {/* <div className='absolute bg-linear-to-t from-white h-full w-full' /> */}
 
+            <div className='absolute bottom-0 bg-linear-to-tr from-white/25 to-transparent h-full w-full' />
+
             <div className='absolute bottom-0 bg-linear-to-t from-white h-[100px] w-full' />
             <div className='absolute bottom-0 bg-linear-to-t from-white h-[200px] w-full' />
             <div className='absolute bottom-0 bg-linear-to-t from-white h-[300px] w-full' />
