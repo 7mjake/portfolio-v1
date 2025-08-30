@@ -44,9 +44,13 @@ export default function RootLayout({ children }) {
             }}
           >
           </div>
-          <Nav />
-          {children}
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <Nav />
+            <main className="flex-1">
+              {children}
+            </main>
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
