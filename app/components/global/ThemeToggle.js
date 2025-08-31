@@ -10,7 +10,6 @@ export default function ThemeToggle() {
 
     // Avoid hydration mismatch
     useEffect(() => setMounted(true), [])
-    if (!mounted) return null
 
     const currentTheme = theme === 'system' ? systemTheme : theme
 
@@ -19,11 +18,15 @@ export default function ThemeToggle() {
             onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
             className="p-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors cursor-pointer"
             aria-label="Toggle theme"
+            disabled={!mounted}
+            style={{ opacity: mounted ? 1 : 1 }}
         >
-            {currentTheme === 'dark' ? (
-                <Sun className="w-4 h-4" />
+            {!mounted ? (
+                <div className="w-4 h-4 rounded-full bg-primary/0 animate-pulse" />
+            ) : currentTheme === 'dark' ? (
+                <Sun className="w-4 h-4 opacity-0 animate-[fadeIn_0.1s_ease-in-out_forwards]" />
             ) : (
-                <Moon className="w-4 h-4" />
+                <Moon className="w-4 h-4 opacity-0 animate-[fadeIn_0.1s_ease-in-out_forwards]" />
             )}
         </button>
     )
