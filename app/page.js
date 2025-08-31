@@ -19,11 +19,11 @@ export default function Home() {
       />
       <HeroBackground />
       <Container>
-        <section className="flex flex-col items-center gap-10">
+        <section className="flex flex-col gap-10">
           <h1 className="text-3xl text-primary">Jake Martin</h1>
-          <h2 className="font-dm-mono font-medium text-9xl text-center text-primary mb-1 tracking-tight">designer/<br />developer/<br />maker</h2>
+          <h2 className="font-newake uppercase font-medium text-[10rem] text-center text-primary mt-5 leading-[0.75]">Designer<br />Developer<br />Maker</h2>
 
-          <h3 className="text-3xl text-primary">NYC</h3>
+          <h3 className="text-3xl text-primary text-right">New York City</h3>
         </section>
       </Container>
 
