@@ -5,6 +5,8 @@ import Container from './components/global/Container'
 import HeroBackground from './components/work/HeroBackground'
 import SkillBox from './components/global/SkillBox'
 import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowUpRight } from 'feather-icons-react'
 
 export default function Home() {
   return (
@@ -20,14 +22,22 @@ export default function Home() {
       <HeroBackground />
       <Container>
         <section className="flex flex-col gap-10">
-          <h1 className="text-3xl text-primary">Jake Martin</h1>
+          <h1 className="text-3xl font-semibold text-secondary">Jake Martin</h1>
           <h2 className="font-newake uppercase font-medium text-[10rem] text-center text-primary mt-5 leading-[0.75]">Designer<br />Developer<br />Maker</h2>
 
-          <h3 className="text-3xl text-primary text-right">New York City</h3>
+          <h3 className="text-3xl font-semibold text-secondary text-right">New York City</h3>
         </section>
       </Container>
 
       <Container>
+        <section className="flex flex-col gap-8">
+          <p className="text-4xl font-medium text-primary w-5/6">I&apos;m a multidisciplinary product designer driven by a passion for cross-functional collaboration, fostering design culture, and simplifying complexity.</p>
+          <p className="text-xl font-medium text-secondary w-5/6 flex items-center gap-1">Currently building AI at <a href="https://fleetio.com/" target="_blank" rel="noopener noreferrer" className="py-1 px-2 rounded-lg bg-primary/5 hover:bg-primary/15 transition-colors cursor-pointer  text-primary flex w-fit items-center gap-0">Fleetio <ArrowUpRight className="size-6" /></a></p>
+
+        </section>
+      </Container>
+
+      {/* <Container>
         <section>
           <div className="grid grid-cols-3 gap-[3px]">
             <SkillBox icon={Layout} align="right">
@@ -41,7 +51,7 @@ export default function Home() {
             </SkillBox>
           </div>
         </section>
-      </Container>
+      </Container> */}
 
       <Container>
         <section>
