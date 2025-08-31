@@ -21,10 +21,10 @@ export default function Home() {
       />
       <HeroBackground />
       <Container>
-        <section className="flex flex-col gap-10">
-          <h1 className="text-3xl text-right font-semibold text-secondary">Jake Martin</h1>
+        <section className="flex flex-col gap-10 text-center">
+          <h1 className="text-3xl font-semibold text-secondary">Jake Martin</h1>
 
-          <h2 className="font-newake uppercase font-medium text-[10rem] text-right text-primary mt-5 leading-[0.75]">Designer<br />Developer<br />Maker</h2>
+          <h2 className="font-newake uppercase font-medium text-[10rem] text-primary mt-5 leading-[0.75]">Designer<br />Developer<br />Maker</h2>
 
           {/* <div className="font-newake uppercase font-medium text-[10rem] text-primary mt-5 leading-[0.75]">
             <h2 className="">Designer</h2>
@@ -32,7 +32,7 @@ export default function Home() {
             <h2 className="text-right">Maker</h2>
           </div> */}
 
-          <h3 className="text-3xl font-semibold text-secondary text-right">New York City</h3>
+          <h3 className="text-3xl font-semibold text-secondary">New York City</h3>
         </section>
       </Container>
 
