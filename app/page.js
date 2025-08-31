@@ -38,26 +38,26 @@ export default function Home() {
 
       <Container>
         <section className="flex flex-col gap-8">
-          <p className="text-4xl leading-normal font-medium text-primary w-5/6">
-            👋🏼 Howdy! I'm glad you're here. Keep scrolling to see my favorite projects, or go{' '}
+          <p className="text-4xl leading-normal font-medium text-secondary w-5/6">
+            👋🏼 Howdy! I&apos;m glad you&apos;re here. Keep scrolling to see my favorite projects, check out what I do for{' '}
             <span className="inline-flex">
               <Link
                 href="/fun"
                 className="px-2 rounded-lg bg-primary/5 hover:bg-primary/20 transition-colors cursor-pointer text-primary inline-block w-fit h-fit items-center gap-0 align-middle"
               >
-                here
+                fun,
               </Link>
             </span>{' '}
-            to see some other things I've done, or{' '}
+            or learn more{' '}
             <span className="inline-flex">
               <Link
                 href="/about"
                 className="px-2 rounded-lg bg-primary/5 hover:bg-primary/20 transition-colors cursor-pointer text-primary inline-block w-fit h-fit items-center gap-0 align-middle"
               >
-                here
+                about me
               </Link>
             </span>{' '}
-            to learn more about me.
+            here.
           </p>
           <p className="text-xl font-medium text-secondary w-5/6 flex items-center gap-1">Currently building AI at <a href="https://fleetio.com/" target="_blank" rel="noopener noreferrer" className="py-1 px-2 rounded-lg bg-primary/5 hover:bg-primary/20 transition-colors cursor-pointer  text-primary flex w-fit items-center gap-0">Fleetio <ArrowUpRight className="size-6" /></a></p>
 
