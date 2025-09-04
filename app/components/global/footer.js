@@ -4,28 +4,40 @@ import { ArrowUpRight } from 'feather-icons-react'
 import Link from 'next/link'
 
 export default function Footer() {
-    return (
-        <Container>
-            <footer className="flex flex-row justify-between items-start mb-24">
-                <div className='flex flex-1 flex-col gap-5 items-start'>
-                    <JmLogo className='h-7 py-1 text-primary' />
-                    <p>Made with love and spite</p>
-                    <p>© 2025 Jake Martin</p>
-                </div>
-                <div className='flex flex-1 flex-col gap-5'>
-                    <h3 className='text-lg font-bold text-primary'>Contact</h3>
-                    <Link href="https://www.linkedin.com/in/jakemartin-design//" className='flex items-center gap-2'>LinkedIn <ArrowUpRight className='size-4' /></Link>
-                    <Link href="https://github.com/7mjake" className='flex items-center gap-2'>GitHub <ArrowUpRight className='size-4' /></Link>
-                    <Link href="mailto:jake@jake.com" className='flex items-center gap-2'>me@jakemartin.design</Link>
-                </div>
-                <div className='flex flex-1 flex-col gap-5'>
-                    <h3 className='text-lg font-bold text-primary'>Navigation</h3>
-                    <Link href="/">Work</Link>
-                    <Link href="/fun">Fun</Link>
-                    <Link href="/about">About</Link>
-                    <Link href="/resume">Resume</Link>
-                </div>
-            </footer>
-        </Container>
-    )
+  return (
+    <Container>
+      <footer className="mb-24 flex flex-row items-start justify-between">
+        <div className="flex flex-1 flex-col items-start gap-5">
+          <JmLogo className="text-primary h-7 py-1" />
+          <p>Made with love and spite</p>
+          <p>© 2025 Jake Martin</p>
+        </div>
+        <div className="flex flex-1 flex-col gap-5">
+          <h3 className="text-primary text-lg font-bold">Contact</h3>
+          <Link
+            href="https://www.linkedin.com/in/jakemartin-design//"
+            className="flex items-center gap-2"
+          >
+            LinkedIn <ArrowUpRight className="size-4" />
+          </Link>
+          <Link
+            href="https://github.com/7mjake"
+            className="flex items-center gap-2"
+          >
+            GitHub <ArrowUpRight className="size-4" />
+          </Link>
+          <Link href="mailto:jake@jake.com" className="flex items-center gap-2">
+            me@jakemartin.design
+          </Link>
+        </div>
+        <div className="flex flex-1 flex-col gap-5">
+          <h3 className="text-primary text-lg font-bold">Navigation</h3>
+          <Link href="/">Work</Link>
+          <Link href="/fun">Fun</Link>
+          <Link href="/about">About</Link>
+          <Link href="/resume">Resume</Link>
+        </div>
+      </footer>
+    </Container>
+  )
 }

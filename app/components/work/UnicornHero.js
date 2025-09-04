@@ -1,4 +1,4 @@
-import UnicornScene from "unicornstudio-react/next"
+import UnicornScene from 'unicornstudio-react/next'
 
 export default function UnicornHero() {
   return (
