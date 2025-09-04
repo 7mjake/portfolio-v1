@@ -34,13 +34,11 @@ export default function Home() {
             Jake Martin
           </h1>
 
-          <h2 className="font-newake text-primary mt-5 text-7xl leading-[0.75] font-medium uppercase md:text-[10rem]">
-            Designer
-            <br />
-            Developer
-            <br />
-            Maker
-          </h2>
+          <div className="font-newake text-primary mt-2 flex flex-col gap-1 text-[18vw] leading-[0.75] font-medium uppercase md:mt-5 md:text-[10rem]">
+            <h2>Designer</h2>
+            <h2>Developer</h2>
+            <h2>Maker</h2>
+          </div>
 
           {/* <div className="font-newake uppercase font-medium text-[10rem] text-primary mt-5 leading-[0.75]">
             <h2 className="">Designer</h2>

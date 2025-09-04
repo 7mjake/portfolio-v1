@@ -4,6 +4,7 @@ import JmLogo from './svgs/jm-logo'
 import ThemeToggle from './ThemeToggle'
 import { useState } from 'react'
 import { Menu, X } from 'feather-icons-react'
+import { usePathname } from 'next/navigation'
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,21 +13,37 @@ export default function Nav() {
     setIsOpen(!isOpen)
   }
 
+  const pathname = usePathname()
+
+  const activeClass = 'font-bold'
+
   return (
     <div
       className={
-        'from-background to-background/50 border-primary fixed top-0 right-0 left-0 z-10 border-b-[3px] bg-gradient-to-b backdrop-blur-sm'
+        'from-background to-background/50 border-primary fixed top-0 right-0 left-0 z-10 border-b-[3px] bg-gradient-to-b backdrop-blur-sm md:border-b-0'
       }
     >
       <Container>
-        <div className="text-primary -mx-[3px] flex items-center justify-between py-4 md:py-6">
+        <div className="text-primary md:border-primary flex items-center justify-between py-4 md:-mx-[3px] md:border-b-[3px] md:py-6">
           <Link href="/">
             <JmLogo className="fill-primary h-8 py-1 md:h-7" />
           </Link>
           <nav className="hidden flex-col items-center gap-6 md:flex md:flex-row">
-            <Link href="/">Work</Link>
-            <Link href="/fun">Fun</Link>
-            <Link href="/about">About</Link>
+            <Link href="/" className={pathname === '/' ? activeClass : ''}>
+              Work
+            </Link>
+            <Link
+              href="/fun"
+              className={pathname === '/fun' ? activeClass : ''}
+            >
+              Fun
+            </Link>
+            <Link
+              href="/about"
+              className={pathname === '/about' ? activeClass : ''}
+            >
+              About
+            </Link>
             <Link href="/resume">Resume</Link>
             <ThemeToggle />
           </nav>
@@ -35,10 +52,22 @@ export default function Nav() {
           </button>
         </div>
         {isOpen && (
-          <nav className="flex flex-col items-end gap-4 pb-8 text-6xl md:hidden">
-            <Link href="/">Work</Link>
-            <Link href="/fun">Fun</Link>
-            <Link href="/about">About</Link>
+          <nav className="text-primary flex flex-col items-end gap-4 pb-8 text-6xl md:hidden">
+            <Link href="/" className={pathname === '/' ? activeClass : ''}>
+              Work
+            </Link>
+            <Link
+              href="/fun"
+              className={pathname === '/fun' ? activeClass : ''}
+            >
+              Fun
+            </Link>
+            <Link
+              href="/about"
+              className={pathname === '/about' ? activeClass : ''}
+            >
+              About
+            </Link>
             <Link href="/resume">Resume</Link>
             <ThemeToggle />
           </nav>

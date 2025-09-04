@@ -6,13 +6,13 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <Container>
-      <footer className="mb-24 flex flex-row items-start justify-between">
-        <div className="flex flex-1 flex-col items-start gap-5">
+      <footer className="mb-24 flex flex-col items-start justify-between gap-8 md:flex-row md:gap-0">
+        <div className="flex flex-1 flex-col items-start gap-3 md:gap-5">
           <JmLogo className="text-primary h-7 py-1" />
           <p>Made with love and spite</p>
           <p>© 2025 Jake Martin</p>
         </div>
-        <div className="flex flex-1 flex-col gap-5">
+        <div className="flex flex-1 flex-col gap-3 md:gap-5">
           <h3 className="text-primary text-lg font-bold">Contact</h3>
           <Link
             href="https://www.linkedin.com/in/jakemartin-design//"
@@ -30,7 +30,7 @@ export default function Footer() {
             me@jakemartin.design
           </Link>
         </div>
-        <div className="flex flex-1 flex-col gap-5">
+        <div className="flex flex-1 flex-col gap-3 md:gap-5">
           <h3 className="text-primary text-lg font-bold">Navigation</h3>
           <Link href="/">Work</Link>
           <Link href="/fun">Fun</Link>

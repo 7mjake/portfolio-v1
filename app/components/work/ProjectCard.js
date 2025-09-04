@@ -21,7 +21,7 @@ export default function ProjectCard({ project }) {
         />
         <div className="from-background/50 to-background/50 absolute inset-0 bg-linear-to-t from-1% via-transparent to-99%"></div>
       </div>
-      <div className="flex w-full flex-col justify-center gap-6 p-8 md:w-1/2">
+      <div className="flex w-full flex-col justify-center gap-6 py-8 md:w-1/2 md:p-8">
         <h3 className="font-newake text-primary -mb-5 text-6xl font-medium tracking-wide uppercase">
           {project.title}
         </h3>
