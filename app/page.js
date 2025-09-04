@@ -76,13 +76,13 @@ export default function Home() {
             </span>{' '}
             here.
           </p>
-          <p className="text-secondary flex w-5/6 flex-col gap-1 text-xl font-medium md:flex-row">
+          <p className="text-secondary flex w-5/6 items-center gap-1 text-xl font-medium">
             Currently building AI at{' '}
             <a
               href="https://fleetio.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-primary/5 hover:bg-primary/20 text-primary flex w-fit cursor-pointer items-center gap-0 rounded-lg px-2 py-1 transition-colors"
+              className="bg-primary/5 hover:bg-primary/20 text-primary inline-flex w-fit cursor-pointer items-center gap-0 rounded-lg px-2 py-1 transition-colors"
             >
               Fleetio <ArrowUpRight className="size-6" />
             </a>
