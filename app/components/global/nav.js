@@ -3,7 +3,7 @@ import Container from './Container'
 import JmLogo from './svgs/jm-logo'
 import ThemeToggle from './ThemeToggle'
 import { useState } from 'react'
-import { Menu } from 'feather-icons-react'
+import { Menu, X } from 'feather-icons-react'
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,9 +19,9 @@ export default function Nav() {
       }
     >
       <Container>
-        <div className="text-primary -mx-[3px] flex items-center justify-between py-6">
+        <div className="text-primary -mx-[3px] flex items-center justify-between py-4 md:py-6">
           <Link href="/">
-            <JmLogo className="fill-primary h-7 py-1" />
+            <JmLogo className="fill-primary h-8 py-1 md:h-7" />
           </Link>
           <nav className="hidden flex-col items-center gap-6 md:flex md:flex-row">
             <Link href="/">Work</Link>
@@ -31,11 +31,11 @@ export default function Nav() {
             <ThemeToggle />
           </nav>
           <button className="md:hidden" onClick={handleClick}>
-            <Menu className="size-6" />
+            {isOpen ? <X className="size-8" /> : <Menu className="size-8" />}
           </button>
         </div>
         {isOpen && (
-          <nav className="flex flex-col items-center gap-6">
+          <nav className="flex flex-col items-end gap-4 pb-8 text-6xl md:hidden">
             <Link href="/">Work</Link>
             <Link href="/fun">Fun</Link>
             <Link href="/about">About</Link>

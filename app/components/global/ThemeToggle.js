@@ -16,17 +16,17 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
-      className="bg-primary/10 hover:bg-primary/20 cursor-pointer rounded-lg p-2 transition-colors"
+      className="bg-primary/10 hover:bg-primary/20 cursor-pointer rounded-lg p-4 transition-colors md:p-2"
       aria-label="Toggle theme"
       disabled={!mounted}
       style={{ opacity: mounted ? 1 : 1 }}
     >
       {!mounted ? (
-        <div className="bg-primary/0 h-4 w-4 animate-pulse rounded-full" />
+        <div className="bg-primary/0 h-10 w-10 animate-pulse rounded-full md:h-4 md:w-4" />
       ) : currentTheme === 'dark' ? (
-        <Sun className="h-4 w-4 animate-[fadeIn_0.1s_ease-in-out_forwards] opacity-0" />
+        <Sun className="h-10 w-10 animate-[fadeIn_0.1s_ease-in-out_forwards] opacity-0 md:h-4 md:w-4" />
       ) : (
-        <Moon className="h-4 w-4 animate-[fadeIn_0.1s_ease-in-out_forwards] opacity-0" />
+        <Moon className="h-10 w-10 animate-[fadeIn_0.1s_ease-in-out_forwards] opacity-0 md:h-4 md:w-4" />
       )}
     </button>
   )
