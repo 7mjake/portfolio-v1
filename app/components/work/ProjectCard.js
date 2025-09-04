@@ -1,16 +1,17 @@
 import Image from 'next/image'
 import clsx from 'clsx'
 import { Lock } from 'feather-icons-react'
+import Container from '../global/Container'
 
 export default function ProjectCard({ project }) {
   return (
-    <div
+    <Container
       className={clsx(
-        'outline-primary p-4] flex flex-row outline-3 outline-solid',
-        project.id % 2 === 0 && 'flex-row-reverse'
+        'outline-primary flex w-full flex-col outline-3 outline-solid md:flex-row md:p-4',
+        project.id % 2 === 0 && 'md:flex-row-reverse'
       )}
     >
-      <div className="relative w-1/2">
+      <div className="relative w-full md:w-1/2">
         <Image
           src={project.image}
           alt={project.title}
@@ -20,7 +21,7 @@ export default function ProjectCard({ project }) {
         />
         <div className="from-background/50 to-background/50 absolute inset-0 bg-linear-to-t from-1% via-transparent to-99%"></div>
       </div>
-      <div className="flex w-1/2 flex-col justify-center gap-6 p-8">
+      <div className="flex w-full flex-col justify-center gap-6 p-8 md:w-1/2">
         <h3 className="font-newake text-primary -mb-5 text-6xl font-medium tracking-wide uppercase">
           {project.title}
         </h3>
@@ -41,6 +42,6 @@ export default function ProjectCard({ project }) {
           )}
         </div>
       </div>
-    </div>
+    </Container>
   )
 }

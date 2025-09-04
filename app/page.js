@@ -29,10 +29,12 @@ export default function Home() {
       />
       <HeroBackground />
       <Container>
-        <section className="flex flex-col gap-10 text-center">
-          <h1 className="text-secondary text-3xl font-semibold">Jake Martin</h1>
+        <section className="flex flex-col gap-5 text-center md:gap-10">
+          <h1 className="text-secondary text-2xl font-semibold md:text-3xl">
+            Jake Martin
+          </h1>
 
-          <h2 className="font-newake text-primary mt-5 text-[10rem] leading-[0.75] font-medium uppercase">
+          <h2 className="font-newake text-primary mt-5 text-7xl leading-[0.75] font-medium uppercase md:text-[10rem]">
             Designer
             <br />
             Developer
@@ -46,7 +48,7 @@ export default function Home() {
             <h2 className="text-right">Maker</h2>
           </div> */}
 
-          <h3 className="text-secondary text-3xl font-semibold">
+          <h3 className="text-secondary text-2xl font-semibold md:text-3xl">
             New York City
           </h3>
         </section>
@@ -54,7 +56,7 @@ export default function Home() {
 
       <Container>
         <section className="flex flex-col gap-8">
-          <p className="text-secondary w-5/6 text-4xl leading-normal font-medium">
+          <p className="text-secondary w-5/6 text-xl leading-normal font-medium md:text-4xl">
             👋🏼 Howdy! I&apos;m glad you&apos;re here. Keep scrolling to see my
             favorite projects, check out what I do for{' '}
             <span className="inline-flex">
@@ -76,7 +78,7 @@ export default function Home() {
             </span>{' '}
             here.
           </p>
-          <p className="text-secondary flex w-5/6 items-center gap-1 text-xl font-medium">
+          <p className="text-secondary flex w-5/6 flex-col gap-1 text-xl font-medium md:flex-row">
             Currently building AI at{' '}
             <a
               href="https://fleetio.com/"
@@ -106,22 +108,20 @@ export default function Home() {
         </section>
       </Container> */}
 
-      <Container>
-        <section>
-          <div className="outline-primary flex flex-col gap-[3px] outline-3 outline-solid">
-            {projects.map(project => (
-              <ProjectCard key={project.id} project={project} />
-            ))}
-          </div>
-        </section>
-      </Container>
+      <section>
+        <div className="outline-primary flex flex-col gap-[3px]">
+          {projects.map(project => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      </section>
 
       <Container>
         <section>
           <h2 className="text-primary mb-6 text-4xl font-bold">
             My core values
           </h2>
-          <div className="grid grid-cols-2 gap-[3px]">
+          <div className="grid grid-cols-1 gap-[3px] md:grid-cols-2">
             <SkillBox icon={Target} align="left">
               <h3 className="text-primary text-2xl font-bold">
                 Intentionality

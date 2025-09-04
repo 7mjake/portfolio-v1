@@ -6,7 +6,7 @@ import Link from 'next/link'
 export default function Footer() {
   return (
     <Container>
-      <footer className="mb-24 flex flex-row items-start justify-between">
+      <footer className="mb-24 flex flex-col items-start justify-between gap-10 md:flex-row">
         <div className="flex flex-1 flex-col items-start gap-5">
           <JmLogo className="text-primary h-7 py-1" />
           <p>Made with love and spite</p>

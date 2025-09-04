@@ -15,11 +15,11 @@ export default function Nav() {
   return (
     <div
       className={
-        'from-background to-background/50 sticky top-0 z-10 bg-gradient-to-b backdrop-blur-sm'
+        'from-background to-background/50 border-primary fixed top-0 right-0 left-0 z-10 border-b-[3px] bg-gradient-to-b backdrop-blur-sm'
       }
     >
       <Container>
-        <div className="text-primary border-primary -mx-[3px] flex items-center justify-between border-b-[3px] py-6">
+        <div className="text-primary -mx-[3px] flex items-center justify-between py-6">
           <Link href="/">
             <JmLogo className="fill-primary h-7 py-1" />
           </Link>

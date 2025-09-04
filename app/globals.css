@@ -3,25 +3,24 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme {
-    --color-primary: rgba(var(--primary));
-    --color-secondary: rgba(var(--secondary));
-    --color-background: rgba(var(--background));
+  --color-primary: rgba(var(--primary));
+  --color-secondary: rgba(var(--secondary));
+  --color-background: rgba(var(--background));
 
-    --outline-width-3: 3px;
+  --outline-width-3: 3px;
 
-    --noise-size: 900px;
+  --noise-size: 900px;
 
-    --font-climate-crisis: var(--font-climate-crisis), sans-serif;
-    --font-figtree: var(--font-figtree), sans-serif;
-    --font-dm-mono: var(--font-dm-mono), sans-serif;
-    --font-pixelify-sans: var(--font-pixelify-sans), sans-serif;
-    --font-advercase: var(--font-advercase), sans-serif;
-    --font-newake: var(--font-newake), sans-serif;
-    --font-poi-aeronaut: var(--font-poi-aeronaut), sans-serif;
-    --font-pp-monument-extended: var(--font-pp-monument-extended), sans-serif;
-    --font-pp-mori: var(--font-pp-mori), sans-serif;
-    --font-thunder: var(--font-thunder), sans-serif;
-
+  --font-climate-crisis: var(--font-climate-crisis), sans-serif;
+  --font-figtree: var(--font-figtree), sans-serif;
+  --font-dm-mono: var(--font-dm-mono), sans-serif;
+  --font-pixelify-sans: var(--font-pixelify-sans), sans-serif;
+  --font-advercase: var(--font-advercase), sans-serif;
+  --font-newake: var(--font-newake), sans-serif;
+  --font-poi-aeronaut: var(--font-poi-aeronaut), sans-serif;
+  --font-pp-monument-extended: var(--font-pp-monument-extended), sans-serif;
+  --font-pp-mori: var(--font-pp-mori), sans-serif;
+  --font-thunder: var(--font-thunder), sans-serif;
 }
 
 /*
@@ -33,45 +32,44 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-
-    *,
-    ::after,
-    ::before,
-    ::backdrop,
-    ::file-selector-button {
-        border-color: var(--color-gray-200, currentcolor);
-    }
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
+  from {
+    opacity: 0;
+  }
 
-    to {
-        opacity: 1;
-    }
+  to {
+    opacity: 1;
+  }
 }
 
 /* Light theme (default) */
 :root {
-    --primary: 0, 111, 255;
-    --secondary: 50, 67, 89;
-    --background: 246, 252, 255;
+  --primary: 0, 111, 255;
+  --secondary: 50, 67, 89;
+  --background: 246, 252, 255;
 }
 
 /* Dark theme */
 .dark {
-    --primary: 75, 144, 255;
-    --secondary: 204, 223, 255;
-    --background: 22, 26, 34;
+  --primary: 75, 144, 255;
+  --secondary: 204, 223, 255;
+  --background: 22, 26, 34;
 }
 
 /* System preference fallback */
 @media (prefers-color-scheme: dark) {
-    :root:not(.light) {
-        --primary: 75, 144, 255;
-        --secondary: 204, 223, 255;
-        --background: 22, 26, 34;
-    }
+  :root:not(.light) {
+    --primary: 75, 144, 255;
+    --secondary: 204, 223, 255;
+    --background: 22, 26, 34;
+  }
 }

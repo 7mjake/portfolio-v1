@@ -1,10 +1,17 @@
-export default function Container({ children, fullWidth = false }) {
+import clsx from 'clsx'
+
+export default function Container({ children, fullWidth = false, className }) {
   if (fullWidth) {
     return <div>{children}</div>
   }
 
   return (
-    <div className="relative mx-auto flex w-full max-w-5xl flex-col">
+    <div
+      className={clsx(
+        'relative mx-auto flex w-full max-w-5xl flex-col px-4',
+        className
+      )}
+    >
       {children}
     </div>
   )
