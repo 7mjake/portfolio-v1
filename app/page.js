@@ -1,10 +1,6 @@
-import { Target, Move, Users, Smile } from 'feather-icons-react'
-import ProjectCard from './components/work/ProjectCard'
-import { projects } from './data/projects'
-import Container from './components/global/Container'
-import SkillBox from './components/global/SkillBox'
 import HeroSection from './components/work/HeroSection'
 import CoreValues from './components/work/CoreValues'
+import Projects from './components/work/Projects'
 
 export default function Home() {
   return (
@@ -27,13 +23,7 @@ export default function Home() {
         </section>
       </Container> */}
 
-      <section>
-        <div className="outline-primary flex flex-col gap-[3px]">
-          {projects.map(project => (
-            <ProjectCard key={project.id} project={project} />
-          ))}
-        </div>
-      </section>
+      <Projects />
 
       <CoreValues />
     </main>
