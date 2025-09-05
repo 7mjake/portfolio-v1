@@ -7,7 +7,7 @@ export default function ProjectCard({ project }) {
   return (
     <Container
       className={clsx(
-        'outline-primary flex w-full flex-col outline-3 outline-solid md:flex-row md:p-4',
+        'outline-primary flex w-full flex-col outline-3 outline-solid md:flex-row',
         project.id % 2 === 0 && 'md:flex-row-reverse'
       )}
     >

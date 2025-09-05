@@ -1,6 +1,7 @@
-import Link from 'next/link'
+import Link from './Link'
 import Container from './Container'
 import JmLogo from './svgs/jm-logo'
+import JmLogo2 from './svgs/jm-logo-2'
 import ThemeToggle from './ThemeToggle'
 import { useState } from 'react'
 import { Menu, X } from 'feather-icons-react'
@@ -26,9 +27,9 @@ export default function Nav() {
       <Container>
         <div className="text-primary md:border-primary flex items-center justify-between py-4 md:-mx-[3px] md:border-b-[3px] md:py-6">
           <Link href="/">
-            <JmLogo className="fill-primary h-8 py-1 md:h-7" />
+            <JmLogo2 className="fill-primary h-8 py-1 md:h-7" />
           </Link>
-          <nav className="hidden flex-col items-center gap-6 md:flex md:flex-row">
+          <nav className="hidden flex-col items-center gap-2 md:flex md:flex-row">
             <Link href="/" className={pathname === '/' ? activeClass : ''}>
               Work
             </Link>
