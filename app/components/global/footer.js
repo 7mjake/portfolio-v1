@@ -1,5 +1,5 @@
 import Container from './Container'
-import JmLogo from './svgs/jm-logo'
+import JmLogo2 from './svgs/jm-logo-2'
 import { ArrowUpRight } from 'feather-icons-react'
 import Link from 'next/link'
 
@@ -8,7 +8,7 @@ export default function Footer() {
     <Container>
       <footer className="mb-24 flex flex-col items-start justify-between gap-8 md:flex-row md:gap-0">
         <div className="flex flex-1 flex-col items-start gap-3 md:gap-5">
-          <JmLogo className="text-primary h-7 py-1" />
+          <JmLogo2 className="text-primary h-7 py-1" />
           <p>Made with love and spite</p>
           <p>© 2025 Jake Martin</p>
         </div>
