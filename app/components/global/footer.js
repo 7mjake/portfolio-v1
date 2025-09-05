@@ -1,7 +1,7 @@
 import Container from './Container'
 import JmLogo2 from './svgs/jm-logo-2'
 import { ArrowUpRight } from 'feather-icons-react'
-import Link from 'next/link'
+import Link from './Link'
 
 export default function Footer() {
   return (

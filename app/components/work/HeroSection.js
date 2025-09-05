@@ -1,6 +1,6 @@
 import HeroBackground from './HeroBackground'
 import Container from '../global/Container'
-import Link from 'next/link'
+import Link from '../global/Link'
 import { ArrowUpRight } from 'feather-icons-react'
 
 export default function HeroSection() {
@@ -47,6 +47,7 @@ export default function HeroSection() {
             <span className="inline-flex">
               <Link
                 href="/fun"
+                button={true}
                 className="bg-primary/5 hover:bg-primary/20 text-primary inline-block h-fit w-fit cursor-pointer items-center gap-0 rounded-lg px-2 align-middle transition-colors"
               >
                 fun,
@@ -56,6 +57,7 @@ export default function HeroSection() {
             <span className="inline-flex">
               <Link
                 href="/about"
+                button={true}
                 className="bg-primary/5 hover:bg-primary/20 text-primary inline-block h-fit w-fit cursor-pointer items-center gap-0 rounded-lg px-2 align-middle transition-colors"
               >
                 about me
@@ -66,14 +68,13 @@ export default function HeroSection() {
           <p className="text-secondary w-5/6 gap-1 text-xl font-medium md:text-2xl">
             Currently building AI at{' '}
             <span className="inline-flex">
-              <a
+              <Link
                 href="https://fleetio.com/"
-                target="_blank"
-                rel="noopener noreferrer"
+                button={true}
                 className="bg-primary/5 hover:bg-primary/20 text-primary inline-flex h-fit w-fit cursor-pointer items-center gap-0 rounded-lg px-2 py-1 align-middle transition-colors"
               >
                 Fleetio <ArrowUpRight className="size-6" />
-              </a>
+              </Link>
             </span>
           </p>
         </section>

@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from './Link'
 import Container from './Container'
 import JmLogo from './svgs/jm-logo'
 import JmLogo2 from './svgs/jm-logo-2'
