@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import { Menu, X } from 'feather-icons-react'
 import { usePathname } from 'next/navigation'
 import ClickAwayListener from 'react-click-away-listener'
+import clsx from 'clsx'
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
@@ -58,8 +59,13 @@ export default function Nav() {
               {isOpen ? <X className="size-8" /> : <Menu className="size-8" />}
             </button>
           </div>
-          {isOpen && (
-            <nav className="text-primary flex flex-col items-end gap-4 pb-8 text-6xl md:hidden">
+          {true && (
+            <nav
+              className={clsx(
+                'text-primary flex flex-col items-end gap-4 overflow-hidden text-6xl transition-all duration-300 md:hidden',
+                isOpen ? 'max-h-screen pb-8 opacity-100' : 'max-h-0 opacity-0'
+              )}
+            >
               <Link href="/" className={pathname === '/' ? activeClass : ''}>
                 Work
               </Link>
