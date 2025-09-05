@@ -29,7 +29,7 @@ export default function Nav() {
           <Link href="/">
             <JmLogo2 className="fill-primary h-8 py-1 md:h-7" />
           </Link>
-          <nav className="hidden flex-col items-center gap-6 md:flex md:flex-row">
+          <nav className="hidden flex-col items-center gap-2 md:flex md:flex-row">
             <Link href="/" className={pathname === '/' ? activeClass : ''}>
               Work
             </Link>
