@@ -75,5 +75,9 @@
 }
 
 .boxify {
-  outline: 3px solid var(--color-primary);
+  @apply outline-primary outline-3 outline-solid;
+}
+
+.h1 {
+  @apply font-newake text-primary mt-2 flex flex-col gap-1 text-[18vw] leading-[0.75] font-medium uppercase md:mt-5 md:text-[10rem];
 }
