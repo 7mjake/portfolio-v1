@@ -21,7 +21,7 @@ export default function HeroSection() {
             Jake Martin
           </h1>
 
-          <div className="font-newake text-primary mt-2 flex flex-col gap-1 text-[18vw] leading-[0.75] font-medium uppercase md:mt-5 md:text-[10rem]">
+          <div className="h1 mt-2 flex flex-col gap-1 md:mt-5">
             <h2>Designer</h2>
             <h2>Developer</h2>
             <h2>Maker</h2>

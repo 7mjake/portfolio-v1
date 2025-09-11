@@ -79,5 +79,17 @@
 }
 
 .h1 {
-  @apply font-newake text-primary mt-2 flex flex-col gap-1 text-[18vw] leading-[0.75] font-medium uppercase md:mt-5 md:text-[10rem];
+  @apply font-newake text-primary text-[18vw] leading-[0.75] font-medium uppercase md:text-[10rem];
+}
+
+.h2 {
+  @apply font-newake text-primary text-6xl font-medium tracking-wide uppercase;
+}
+
+.h3 {
+  @apply font-newake text-primary text-4xl font-medium tracking-wide uppercase;
+}
+
+.h4 {
+  @apply font-newake text-primary text-2xl font-medium tracking-wide uppercase;
 }

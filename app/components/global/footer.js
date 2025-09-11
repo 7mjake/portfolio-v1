@@ -13,9 +13,7 @@ export default function Footer() {
           <p>© 2025 Jake Martin</p>
         </div>
         <div className="flex flex-1 flex-col gap-3 md:gap-5">
-          <h3 className="text-primary font-newake text-2xl tracking-wide uppercase">
-            Contact
-          </h3>
+          <h3 className="h4">Contact</h3>
           <Link
             href="https://www.linkedin.com/in/jakemartin-design//"
             className="flex items-center gap-2"
@@ -33,9 +31,7 @@ export default function Footer() {
           </Link>
         </div>
         <div className="flex flex-1 flex-col gap-3 md:gap-5">
-          <h3 className="text-primary font-newake text-2xl tracking-wide uppercase">
-            Navigation
-          </h3>
+          <h3 className="h4">Navigation</h3>
           <Link href="/">Work</Link>
           <Link href="/fun">Fun</Link>
           <Link href="/about">About</Link>
