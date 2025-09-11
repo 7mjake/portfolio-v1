@@ -7,7 +7,7 @@ export default function ProjectCard({ project }) {
   return (
     <Container
       className={clsx(
-        'outline-primary flex w-full flex-col outline-3 outline-solid md:flex-row',
+        'boxify flex w-full flex-col md:flex-row',
         project.id % 2 === 0 && 'md:flex-row-reverse'
       )}
     >
@@ -28,15 +28,12 @@ export default function ProjectCard({ project }) {
         <p className="text-lg">{project.description}</p>
         <div className="flex flex-wrap gap-[3px]">
           {project.tags.map(tag => (
-            <span
-              className="text-primary outline-primary px-2 font-medium outline-3 outline-solid"
-              key={tag}
-            >
+            <span className="text-primary boxify px-2 font-medium" key={tag}>
               {tag}
             </span>
           ))}
           {project.locked && (
-            <span className="text-primary outline-primary flex flex-row items-center gap-2 px-2 font-medium outline-3 outline-solid">
+            <span className="text-primary boxify flex flex-row items-center gap-2 px-2 font-medium">
               <Lock className="h-3 w-3" /> Password required
             </span>
           )}

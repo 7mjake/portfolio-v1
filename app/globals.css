@@ -73,3 +73,7 @@
     --background: 22, 26, 34;
   }
 }
+
+.boxify {
+  @apply outline-primary outline-3 outline-solid;
+}
