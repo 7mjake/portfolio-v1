@@ -33,7 +33,7 @@ export default function Nav() {
       >
         <Container>
           <div className="text-primary md:border-primary flex items-center justify-between py-4 md:-mx-[3px] md:border-b-[3px] md:py-6">
-            <Link href="/">
+            <Link href="/" animate={false}>
               <JmLogo2 className="fill-primary h-8 py-1 md:h-7" />
             </Link>
             <nav className="hidden flex-col items-center gap-2 md:flex md:flex-row">
