@@ -75,5 +75,5 @@
 }
 
 .boxify {
-  @apply outline-primary outline-3 outline-solid;
+  outline: 3px solid var(--color-primary);
 }
