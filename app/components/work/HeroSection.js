@@ -70,6 +70,8 @@ export default function HeroSection() {
             <span className="inline-flex">
               <Link
                 href="https://www.datadoghq.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 button={true}
                 className="bg-primary/5 hover:bg-primary/20 text-primary inline-flex h-fit w-fit cursor-pointer items-center gap-0 rounded-lg px-2 py-1 align-middle transition-colors"
               >
