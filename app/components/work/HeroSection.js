@@ -66,14 +66,14 @@ export default function HeroSection() {
             here.
           </p>
           <p className="text-secondary w-5/6 gap-1 text-xl font-medium md:text-2xl">
-            Currently building AI at{' '}
+            Currently building next-gen developer tools at{' '}
             <span className="inline-flex">
               <Link
-                href="https://fleetio.com/"
+                href="https://www.datadoghq.com/"
                 button={true}
                 className="bg-primary/5 hover:bg-primary/20 text-primary inline-flex h-fit w-fit cursor-pointer items-center gap-0 rounded-lg px-2 py-1 align-middle transition-colors"
               >
-                Fleetio <ArrowUpRight className="size-6" />
+                Datadog <ArrowUpRight className="size-6" />
               </Link>
             </span>
           </p>

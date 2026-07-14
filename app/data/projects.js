@@ -1,6 +1,14 @@
 export const projects = [
   {
     id: 1,
+    title: 'Datadog',
+    description: 'AI-powered database observability.',
+    image: '/images/proj-covers/datadog.png',
+    tags: ['Web', 'Developer Tools', 'B2B', 'Coming soon...'],
+    locked: true,
+  },
+  {
+    id: 2,
     title: 'Fleetio',
     description: 'Cutting-edge technology for fleet management.',
     image: '/images/proj-covers/fleetio.png',
@@ -9,7 +17,7 @@ export const projects = [
     path: '/projects/fleetio',
   },
   {
-    id: 2,
+    id: 3,
     title: 'Dairy Queen',
     description:
       'Major updates to the Dairy Queen app and website that drive conversion, loyalty, and user satisfaction.',
@@ -19,7 +27,7 @@ export const projects = [
     path: '/projects/dairy-queen',
   },
   {
-    id: 3,
+    id: 4,
     title: "Domino's",
     description:
       'The next-gen store management system for the largest pizza chain in the US.',
@@ -29,7 +37,7 @@ export const projects = [
     path: '/projects/dominos',
   },
   {
-    id: 4,
+    id: 5,
     title: 'BiteClub',
     description:
       'An iOS app that helps couples find a place to eat. Built from scratch by yours truly :)',
@@ -39,7 +47,7 @@ export const projects = [
     path: '/projects/biteclub',
   },
   {
-    id: 5,
+    id: 6,
     title: 'Ascensus',
     description:
       'Redesigning a powerful tool that helps small business owners provide retirement savings for their employees.',
@@ -49,7 +57,7 @@ export const projects = [
     path: '/projects/ascensus',
   },
   {
-    id: 6,
+    id: 7,
     title: 'Dexcom',
     description:
       'Design explorations for a revolutionary OTC diabetes management platform.',
