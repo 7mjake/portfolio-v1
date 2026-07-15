@@ -11,16 +11,8 @@
 
   --noise-size: 900px;
 
-  --font-climate-crisis: var(--font-climate-crisis), sans-serif;
-  --font-figtree: var(--font-figtree), sans-serif;
-  --font-dm-mono: var(--font-dm-mono), sans-serif;
-  --font-pixelify-sans: var(--font-pixelify-sans), sans-serif;
-  --font-advercase: var(--font-advercase), sans-serif;
   --font-newake: var(--font-newake), sans-serif;
-  --font-poi-aeronaut: var(--font-poi-aeronaut), sans-serif;
-  --font-pp-monument-extended: var(--font-pp-monument-extended), sans-serif;
-  --font-pp-mori: var(--font-pp-mori), sans-serif;
-  --font-thunder: var(--font-thunder), sans-serif;
+  --font-figtree: var(--font-figtree), sans-serif;
 }
 
 /*
@@ -58,6 +50,11 @@
   --background: 246, 252, 255;
 }
 
+html {
+  background-color: rgb(var(--background));
+  overscroll-behavior-y: none;
+}
+
 /* Dark theme */
 .dark {
   --primary: 75, 144, 255;
@@ -72,24 +69,4 @@
     --secondary: 204, 223, 255;
     --background: 22, 26, 34;
   }
-}
-
-.boxify {
-  @apply outline-primary outline-3 outline-solid;
-}
-
-.h1 {
-  @apply font-newake text-primary text-[18vw] leading-[0.75] font-medium uppercase md:text-[10rem];
-}
-
-.h2 {
-  @apply font-newake text-primary text-6xl font-medium tracking-wide uppercase;
-}
-
-.h3 {
-  @apply font-newake text-primary text-4xl font-medium tracking-wide uppercase;
-}
-
-.h4 {
-  @apply font-newake text-primary text-2xl font-medium tracking-wide uppercase;
 }

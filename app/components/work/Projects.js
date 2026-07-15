@@ -6,8 +6,8 @@ export default function Projects() {
     <section>
       <section>
         <div className="flex flex-col gap-[3px]">
-          {projects.map(project => (
-            <ProjectCard key={project.id} project={project} />
+          {projects.map((project, index) => (
+            <ProjectCard key={project.slug} project={project} index={index} />
           ))}
         </div>
       </section>

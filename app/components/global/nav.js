@@ -1,6 +1,7 @@
+'use client'
+
 import Link from './Link'
 import Container from './Container'
-import JmLogo from './svgs/jm-logo'
 import JmLogo2 from './svgs/jm-logo-2'
 import ThemeToggle from './ThemeToggle'
 import { useState, useEffect } from 'react'
@@ -8,6 +9,7 @@ import { Menu, X } from 'feather-icons-react'
 import { usePathname } from 'next/navigation'
 import ClickAwayListener from 'react-click-away-listener'
 import clsx from 'clsx'
+import { navigationItems } from '../../data/navigation'
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,7 +24,18 @@ export default function Nav() {
     setIsOpen(false)
   }, [pathname])
 
-  const activeClass = 'font-bold'
+  const isActive = href => pathname === href
+
+  const navigationLinks = () =>
+    navigationItems.map(item => (
+      <Link
+        href={item.href}
+        key={item.href}
+        className={clsx(isActive(item.href) && 'font-bold')}
+      >
+        {item.label}
+      </Link>
+    ))
 
   return (
     <ClickAwayListener onClickAway={() => setIsOpen(false)}>
@@ -36,55 +49,31 @@ export default function Nav() {
             <Link href="/" animate={false}>
               <JmLogo2 className="fill-primary h-8 py-1 md:h-7" />
             </Link>
-            <nav className="hidden flex-col items-center gap-2 md:flex md:flex-row">
-              <Link href="/" className={pathname === '/' ? activeClass : ''}>
-                Work
-              </Link>
-              <Link
-                href="/fun"
-                className={pathname === '/fun' ? activeClass : ''}
-              >
-                Fun
-              </Link>
-              <Link
-                href="/about"
-                className={pathname === '/about' ? activeClass : ''}
-              >
-                About
-              </Link>
-              <Link href="/resume">Resume</Link>
+            <nav aria-label="Primary navigation" className="hidden flex-col items-center gap-2 md:flex md:flex-row">
+              {navigationLinks()}
               <ThemeToggle />
             </nav>
-            <button className="md:hidden" onClick={handleClick}>
+            <button
+              className="focus-visible:ring-primary rounded-lg outline-none focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
+              onClick={handleClick}
+              aria-controls="mobile-navigation"
+              aria-expanded={isOpen}
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            >
               {isOpen ? <X className="size-8" /> : <Menu className="size-8" />}
             </button>
           </div>
-          {true && (
-            <nav
-              className={clsx(
-                'text-primary flex flex-col items-end gap-4 overflow-hidden text-6xl transition-all duration-300 md:hidden',
-                isOpen ? 'max-h-screen pb-8 opacity-100' : 'max-h-0 opacity-0'
-              )}
-            >
-              <Link href="/" className={pathname === '/' ? activeClass : ''}>
-                Work
-              </Link>
-              <Link
-                href="/fun"
-                className={pathname === '/fun' ? activeClass : ''}
-              >
-                Fun
-              </Link>
-              <Link
-                href="/about"
-                className={pathname === '/about' ? activeClass : ''}
-              >
-                About
-              </Link>
-              <Link href="/resume">Resume</Link>
-              <ThemeToggle />
-            </nav>
-          )}
+          <nav
+            id="mobile-navigation"
+            aria-label="Mobile navigation"
+            className={clsx(
+              'text-primary flex flex-col items-end gap-4 overflow-hidden text-6xl transition-all duration-300 md:hidden',
+              isOpen ? 'max-h-screen pb-8 opacity-100' : 'max-h-0 opacity-0'
+            )}
+          >
+            {navigationLinks(true)}
+            <ThemeToggle />
+          </nav>
         </Container>
       </div>
     </ClickAwayListener>

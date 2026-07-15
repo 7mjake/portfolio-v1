@@ -1,21 +1,13 @@
-'use client'
-
 import './globals.css'
 import Nav from './components/global/nav'
-import {
-  Climate_Crisis,
-  Figtree,
-  DM_Mono,
-  Pixelify_Sans,
-} from 'next/font/google'
+import { Figtree } from 'next/font/google'
 import localFont from 'next/font/local'
 import Footer from './components/global/footer'
 import ThemeProvider from './components/global/ThemeProvider'
 
-const climateCrisis = Climate_Crisis({
-  subsets: ['latin'],
-  weight: '400',
-  variable: '--font-climate-crisis',
+const newake = localFont({
+  src: '../public/fonts/Newake-Font-Demo.otf',
+  variable: '--font-newake',
 })
 
 const figtree = Figtree({
@@ -24,53 +16,19 @@ const figtree = Figtree({
   variable: '--font-figtree',
 })
 
-const dmMono = DM_Mono({
-  subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-dm-mono',
-})
-
-const pixelifySans = Pixelify_Sans({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-  variable: '--font-pixelify-sans',
-})
-
-const advercase = localFont({
-  src: '../public/fonts/AdvercaseFont-Demo-Regular.otf',
-  variable: '--font-advercase',
-})
-
-const newake = localFont({
-  src: '../public/fonts/Newake-Font-Demo.otf',
-  variable: '--font-newake',
-})
-
-const poiAeronaut = localFont({
-  src: '../public/fonts/POIAeronautTrial-Regular.otf',
-  variable: '--font-poi-aeronaut',
-})
-
-const ppMonumentExtended = localFont({
-  src: '../public/fonts/PPMonumentExtended-Black.otf',
-  variable: '--font-pp-monument-extended',
-})
-
-const ppMori = localFont({
-  src: '../public/fonts/PPMori-SemiBold.otf',
-  variable: '--font-pp-mori',
-})
-
-const thunder = localFont({
-  src: '../public/fonts/Thunder-BoldLC.woff2',
-  variable: '--font-thunder',
-})
+export const metadata = {
+  title: {
+    default: 'Jake Martin — Designer, Developer, Maker',
+    template: '%s | Jake Martin',
+  },
+  description: 'The portfolio of Jake Martin, a designer, developer, and maker in New York City.',
+}
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`antialiased ${figtree.variable} ${climateCrisis.variable} ${dmMono.variable} ${pixelifySans.variable} ${advercase.variable} ${newake.variable} ${poiAeronaut.variable} ${ppMonumentExtended.variable} ${ppMori.variable} ${thunder.variable} font-figtree bg-background text-secondary relative`}
+        className={`antialiased ${figtree.variable} ${newake.variable} font-figtree bg-background text-secondary relative`}
       >
         <ThemeProvider>
           <div

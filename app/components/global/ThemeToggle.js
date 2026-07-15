@@ -16,13 +16,12 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
-      className="bg-primary/10 hover:bg-primary/20 cursor-pointer rounded-lg p-4 transition-colors md:p-2"
+      className="bg-primary/10 hover:bg-primary/20 focus-visible:ring-primary cursor-pointer rounded-lg p-4 outline-none transition-colors focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:p-2"
       aria-label="Toggle theme"
       disabled={!mounted}
-      style={{ opacity: mounted ? 1 : 1 }}
     >
       {!mounted ? (
-        <div className="bg-primary/0 h-10 w-10 animate-pulse rounded-full md:h-4 md:w-4" />
+        <div className="bg-primary/0 h-10 w-10 animate-pulse rounded-full motion-reduce:animate-none md:h-4 md:w-4" />
       ) : currentTheme === 'dark' ? (
         <Sun className="h-10 w-10 animate-[fadeIn_0.1s_ease-in-out_forwards] opacity-0 md:h-4 md:w-4" />
       ) : (

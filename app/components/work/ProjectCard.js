@@ -1,16 +1,16 @@
 import Image from 'next/image'
 import clsx from 'clsx'
-import { Lock } from 'feather-icons-react'
 import Container from '../global/Container'
+import Heading from '../global/Heading'
+import Link from '../global/Link'
+import StatusChip from '../global/StatusChip'
 
-export default function ProjectCard({ project }) {
-  return (
-    <Container
-      className={clsx(
-        'boxify flex w-full flex-col md:flex-row',
-        project.id % 2 === 0 && 'md:flex-row-reverse'
-      )}
-    >
+export default function ProjectCard({ project, index }) {
+  const isPrivate = project.access === 'private'
+  const isPublished = Boolean(project.href)
+
+  const cardContent = (
+    <>
       <div className="relative w-full md:w-1/2">
         <Image
           src={project.image}
@@ -19,24 +19,42 @@ export default function ProjectCard({ project }) {
           height={500}
           className="w-full object-cover drop-shadow-2xl"
         />
-        <div className="from-background/50 to-background/50 absolute inset-0 bg-linear-to-t from-1% via-transparent to-99%"></div>
+        <div className="from-background/50 to-background/50 pointer-events-none absolute inset-0 bg-linear-to-t from-1% via-transparent to-99%" />
       </div>
-      <div className="flex w-full flex-col justify-center gap-6 py-8 md:w-1/2 md:p-8">
-        <h3 className="h2 -mb-5">{project.title}</h3>
+      <div className="flex w-full flex-col justify-center gap-6 px-4 py-8 md:w-1/2 md:p-8">
+        <Heading as="h3" variant="card" className="-mb-5">
+          {project.title}
+        </Heading>
         <p className="text-lg">{project.description}</p>
         <div className="flex flex-wrap gap-[3px]">
           {project.tags.map(tag => (
-            <span className="text-primary boxify px-2 font-medium" key={tag}>
-              {tag}
-            </span>
+            <StatusChip key={tag}>{tag}</StatusChip>
           ))}
-          {project.locked && (
-            <span className="text-primary boxify flex flex-row items-center gap-2 px-2 font-medium">
-              <Lock className="h-3 w-3" /> Password required
-            </span>
+          {isPrivate && <StatusChip locked>Password required</StatusChip>}
+          {project.access === 'in-progress' && (
+            <StatusChip>Case study in progress</StatusChip>
           )}
         </div>
       </div>
+    </>
+  )
+
+  const cardClasses = clsx(
+    'outline-primary flex w-full flex-col outline-3 outline-solid md:flex-row',
+    index % 2 === 1 && 'md:flex-row-reverse'
+  )
+
+  return (
+    <Container gutter={false}>
+      {isPublished ? (
+        <Link href={project.href} className={cardClasses} animate={false}>
+          {cardContent}
+        </Link>
+      ) : (
+        <article className={cardClasses} aria-label={`${project.title} case study`}>
+          {cardContent}
+        </article>
+      )}
     </Container>
   )
 }

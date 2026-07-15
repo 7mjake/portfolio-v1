@@ -1,5 +1,5 @@
-import Container from '../components/global/Container'
+import InProgressPage from '../components/global/InProgressPage'
 
 export default function Fun() {
-  return <Container></Container>
+  return <InProgressPage title="Fun" />
 }
