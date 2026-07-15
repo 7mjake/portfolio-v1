@@ -1,5 +1,13 @@
 import NextLink from 'next/link'
 import clsx from 'clsx'
+import type { ComponentProps, ReactNode } from 'react'
+
+type LinkProps = Omit<ComponentProps<typeof NextLink>, 'children' | 'className'> & {
+  children: ReactNode
+  className?: string
+  animate?: boolean
+  variant?: 'text' | 'button'
+}
 
 export default function Link({
   className,
@@ -7,7 +15,7 @@ export default function Link({
   animate = true,
   variant = 'text',
   ...props
-}) {
+}: LinkProps) {
   return (
     <NextLink
       className={clsx(

@@ -1,7 +1,14 @@
 import clsx from 'clsx'
 import { Lock } from 'feather-icons-react'
+import type { ReactNode } from 'react'
 
-export default function StatusChip({ children, locked = false, className }) {
+type StatusChipProps = {
+  children: ReactNode
+  locked?: boolean
+  className?: string
+}
+
+export default function StatusChip({ children, locked = false, className }: StatusChipProps) {
   return (
     <span
       className={clsx(

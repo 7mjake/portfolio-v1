@@ -1,6 +1,13 @@
 import clsx from 'clsx'
+import type { ComponentType, ReactNode, SVGProps } from 'react'
 
-export default function SkillBox({ align = 'left', children, icon: Icon }) {
+type SkillBoxProps = {
+  align?: 'left' | 'center'
+  children: ReactNode
+  icon: ComponentType<SVGProps<SVGSVGElement>>
+}
+
+export default function SkillBox({ align = 'left', children, icon: Icon }: SkillBoxProps) {
   return (
     <div
       className={clsx(

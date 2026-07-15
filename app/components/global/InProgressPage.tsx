@@ -2,7 +2,11 @@ import Heading from './Heading'
 import Link from './Link'
 import PageSection from './PageSection'
 
-export default function InProgressPage({ title }) {
+type InProgressPageProps = {
+  title: string
+}
+
+export default function InProgressPage({ title }: InProgressPageProps) {
   return (
     <PageSection className="flex min-h-[calc(100vh-16rem)] items-center" spacing="default">
       <div className="outline-primary max-w-2xl space-y-6 p-8 outline-3 outline-solid md:p-12">

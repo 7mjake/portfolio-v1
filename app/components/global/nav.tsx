@@ -24,7 +24,7 @@ export default function Nav() {
     setIsOpen(false)
   }, [pathname])
 
-  const isActive = href => pathname === href
+  const isActive = (href: string) => pathname === href
 
   const navigationLinks = () =>
     navigationItems.map(item => (
@@ -71,7 +71,7 @@ export default function Nav() {
               isOpen ? 'max-h-screen pb-8 opacity-100' : 'max-h-0 opacity-0'
             )}
           >
-            {navigationLinks(true)}
+            {navigationLinks()}
             <ThemeToggle />
           </nav>
         </Container>

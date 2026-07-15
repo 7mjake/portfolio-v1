@@ -4,6 +4,8 @@ import { Figtree } from 'next/font/google'
 import localFont from 'next/font/local'
 import Footer from './components/global/footer'
 import ThemeProvider from './components/global/ThemeProvider'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
 const newake = localFont({
   src: '../public/fonts/Newake-Font-Demo.otf',
@@ -16,7 +18,7 @@ const figtree = Figtree({
   variable: '--font-figtree',
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: {
     default: 'Jake Martin — Designer, Developer, Maker',
     template: '%s | Jake Martin',
@@ -24,7 +26,11 @@ export const metadata = {
   description: 'The portfolio of Jake Martin, a designer, developer, and maker in New York City.',
 }
 
-export default function RootLayout({ children }) {
+type RootLayoutProps = {
+  children: ReactNode
+}
+
+export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body

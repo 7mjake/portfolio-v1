@@ -4,8 +4,14 @@ import Container from '../global/Container'
 import Heading from '../global/Heading'
 import Link from '../global/Link'
 import StatusChip from '../global/StatusChip'
+import type { Project } from '../../data/projects'
 
-export default function ProjectCard({ project, index }) {
+type ProjectCardProps = {
+  project: Project
+  index: number
+}
+
+export default function ProjectCard({ project, index }: ProjectCardProps) {
   const isPrivate = project.access === 'private'
   const isPublished = Boolean(project.href)
 

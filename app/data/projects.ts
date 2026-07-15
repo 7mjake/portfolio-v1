@@ -1,4 +1,16 @@
-export const projects = [
+export type ProjectAccess = 'private' | 'in-progress'
+
+export type Project = {
+  slug: string
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  access: ProjectAccess
+  href?: string
+}
+
+export const projects: Project[] = [
   {
     slug: 'datadog',
     title: 'Datadog',
