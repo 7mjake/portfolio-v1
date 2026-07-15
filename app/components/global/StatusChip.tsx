@@ -8,11 +8,28 @@ type StatusChipProps = {
   className?: string
 }
 
-export default function StatusChip({ children, locked = false, className }: StatusChipProps) {
+type StatusChipGroupProps = {
+  children: ReactNode
+  className?: string
+}
+
+export function StatusChipGroup({ children, className }: StatusChipGroupProps) {
+  return (
+    <div className={clsx('flex flex-wrap pr-[3px] pb-[3px]', className)}>
+      {children}
+    </div>
+  )
+}
+
+export default function StatusChip({
+  children,
+  locked = false,
+  className,
+}: StatusChipProps) {
   return (
     <span
       className={clsx(
-        'outline-primary text-primary flex items-center gap-2 px-2 font-medium outline-3 outline-solid',
+        'border-primary text-primary -mr-[3px] -mb-[3px] flex items-center gap-2 border-[3px] px-2 font-medium',
         className
       )}
     >

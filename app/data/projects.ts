@@ -35,6 +35,7 @@ export const projects: Project[] = [
     image: '/images/proj-covers/dq.png',
     tags: ['Mobile', 'Web', 'B2C'],
     access: 'in-progress',
+    href: '/work/dairy-queen',
   },
   {
     slug: 'dominos',

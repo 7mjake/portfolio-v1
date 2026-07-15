@@ -45,20 +45,25 @@ export default function Nav() {
         }
       >
         <Container>
-          <div className="text-primary md:border-primary flex items-center justify-between py-4 md:-mx-[3px] md:border-b-[3px] md:py-6">
+          <div className="text-primary md:border-primary flex items-center justify-between py-4 md:border-b-[3px] md:py-6">
             <Link href="/" animate={false}>
               <JmLogo2 className="fill-primary h-8 py-1 md:h-7" />
             </Link>
-            <nav aria-label="Primary navigation" className="hidden flex-col items-center gap-2 md:flex md:flex-row">
+            <nav
+              aria-label="Primary navigation"
+              className="hidden flex-col items-center gap-2 md:flex md:flex-row"
+            >
               {navigationLinks()}
               <ThemeToggle />
             </nav>
             <button
-              className="focus-visible:ring-primary rounded-lg outline-none focus-visible:ring-3 focus-visible:ring-offset-2 focus-visible:ring-offset-background md:hidden"
+              className="focus-visible:ring-primary focus-visible:ring-offset-background rounded-lg outline-none focus-visible:ring-3 focus-visible:ring-offset-2 md:hidden"
               onClick={handleClick}
               aria-controls="mobile-navigation"
               aria-expanded={isOpen}
-              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-label={
+                isOpen ? 'Close navigation menu' : 'Open navigation menu'
+              }
             >
               {isOpen ? <X className="size-8" /> : <Menu className="size-8" />}
             </button>

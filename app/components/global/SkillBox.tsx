@@ -7,11 +7,15 @@ type SkillBoxProps = {
   icon: ComponentType<SVGProps<SVGSVGElement>>
 }
 
-export default function SkillBox({ align = 'left', children, icon: Icon }: SkillBoxProps) {
+export default function SkillBox({
+  align = 'left',
+  children,
+  icon: Icon,
+}: SkillBoxProps) {
   return (
     <div
       className={clsx(
-        'outline-primary flex min-h-40 flex-col justify-center gap-2 p-8 outline-3 outline-solid',
+        'bg-background flex min-h-40 flex-col justify-center gap-2 p-8',
         align === 'left' ? 'items-start' : 'items-center text-center'
       )}
     >

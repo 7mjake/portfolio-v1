@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import Container from '../global/Container'
 import Heading from '../global/Heading'
 import Link from '../global/Link'
-import StatusChip from '../global/StatusChip'
+import StatusChip, { StatusChipGroup } from '../global/StatusChip'
 import type { Project } from '../../data/projects'
 
 type ProjectCardProps = {
@@ -13,7 +13,6 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
   const isPrivate = project.access === 'private'
-  const isPublished = Boolean(project.href)
 
   const cardContent = (
     <>
@@ -32,7 +31,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.title}
         </Heading>
         <p className="text-lg">{project.description}</p>
-        <div className="flex flex-wrap gap-[3px]">
+        <StatusChipGroup>
           {project.tags.map(tag => (
             <StatusChip key={tag}>{tag}</StatusChip>
           ))}
@@ -40,24 +39,33 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.access === 'in-progress' && (
             <StatusChip>Case study in progress</StatusChip>
           )}
-        </div>
+        </StatusChipGroup>
       </div>
     </>
   )
 
   const cardClasses = clsx(
-    'outline-primary flex w-full flex-col outline-3 outline-solid md:flex-row',
+    'border-primary flex w-full flex-col border-x-[3px] border-b-[3px] md:flex-row',
+    index === 0 && 'border-t-[3px]',
     index % 2 === 1 && 'md:flex-row-reverse'
   )
 
   return (
     <Container gutter={false}>
-      {isPublished ? (
-        <Link href={project.href} className={cardClasses} animate={false}>
+      {project.href ? (
+        <Link
+          href={project.href}
+          className={cardClasses}
+          animate={false}
+          rounded={false}
+        >
           {cardContent}
         </Link>
       ) : (
-        <article className={cardClasses} aria-label={`${project.title} case study`}>
+        <article
+          className={cardClasses}
+          aria-label={`${project.title} case study`}
+        >
           {cardContent}
         </article>
       )}
