@@ -4,7 +4,7 @@ import Link from './Link'
 import Container from './Container'
 import JmLogo2 from './svgs/jm-logo-2'
 import ThemeToggle from './ThemeToggle'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Menu, X } from 'feather-icons-react'
 import { usePathname } from 'next/navigation'
 import ClickAwayListener from 'react-click-away-listener'
@@ -12,17 +12,13 @@ import clsx from 'clsx'
 import { navigationItems } from '../../data/navigation'
 
 export default function Nav() {
-  const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  const [menu, setMenu] = useState({ path: pathname, open: false })
+  const isOpen = menu.path === pathname && menu.open
 
   const handleClick = () => {
-    setIsOpen(prev => !prev)
+    setMenu({ path: pathname, open: !isOpen })
   }
-
-  const pathname = usePathname()
-
-  useEffect(() => {
-    setIsOpen(false)
-  }, [pathname])
 
   const isActive = (href: string) => pathname === href
 
@@ -38,7 +34,7 @@ export default function Nav() {
     ))
 
   return (
-    <ClickAwayListener onClickAway={() => setIsOpen(false)}>
+    <ClickAwayListener onClickAway={() => setMenu({ path: pathname, open: false })}>
       <div
         className={
           'from-background to-background/50 border-primary fixed top-0 right-0 left-0 z-10 border-b-[3px] bg-gradient-to-b backdrop-blur-sm md:border-b-0'

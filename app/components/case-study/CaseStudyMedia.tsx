@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import clsx from 'clsx'
-import type { CaseStudyMedia as CaseStudyMediaType } from '../../data/caseStudies'
+import type { CaseStudyMedia as CaseStudyMediaType } from '../../types/content'
 import VideoMedia from './VideoMedia'
 
 type CaseStudyMediaProps = {

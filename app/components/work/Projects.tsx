@@ -1,7 +1,8 @@
 import ProjectCard from './ProjectCard'
-import { projects } from '../../data/projects'
+import { getPublishedProjects } from '../../lib/content/public'
 
-export default function Projects() {
+export default async function Projects() {
+  const projects = await getPublishedProjects()
   return (
     <section>
       <section>

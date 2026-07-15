@@ -4,7 +4,7 @@ import Container from '../global/Container'
 import Heading from '../global/Heading'
 import Link from '../global/Link'
 import StatusChip, { StatusChipGroup } from '../global/StatusChip'
-import type { Project } from '../../data/projects'
+import type { ProjectCard as Project } from '../../types/content'
 
 type ProjectCardProps = {
   project: Project
@@ -19,7 +19,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
       <div className="relative w-full md:w-1/2">
         <Image
           src={project.image}
-          alt={project.title}
+          alt={project.imageAlt}
           width={500}
           height={500}
           className="w-full object-cover drop-shadow-2xl"

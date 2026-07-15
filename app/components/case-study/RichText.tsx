@@ -1,4 +1,4 @@
-import type { RichTextDocument, RichTextSpan } from '../../data/caseStudies'
+import type { RichTextDocument, RichTextSpan } from '../../types/content'
 
 type RichTextProps = {
   document: RichTextDocument

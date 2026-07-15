@@ -1,6 +1,6 @@
 import Heading from '../global/Heading'
 import PageSection from '../global/PageSection'
-import type { CaseStudy } from '../../data/caseStudies'
+import type { CaseStudy } from '../../types/content'
 import CaseStudyMedia from './CaseStudyMedia'
 
 type CaseStudyHeroProps = {

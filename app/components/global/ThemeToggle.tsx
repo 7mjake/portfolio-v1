@@ -1,15 +1,14 @@
 'use client'
 
 import { useTheme } from 'next-themes'
-import { useEffect, useState } from 'react'
+import { useSyncExternalStore } from 'react'
 import { Sun, Moon } from 'feather-icons-react'
 
-export default function ThemeToggle() {
-  const [mounted, setMounted] = useState(false)
-  const { theme, setTheme, systemTheme } = useTheme()
+const subscribe = () => () => undefined
 
-  // Avoid hydration mismatch
-  useEffect(() => setMounted(true), [])
+export default function ThemeToggle() {
+  const mounted = useSyncExternalStore(subscribe, () => true, () => false)
+  const { theme, setTheme, systemTheme } = useTheme()
 
   const currentTheme = theme === 'system' ? systemTheme : theme
 

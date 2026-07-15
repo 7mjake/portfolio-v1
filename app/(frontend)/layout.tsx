@@ -1,14 +1,14 @@
-import './globals.css'
-import Nav from './components/global/nav'
+import '../globals.css'
+import Nav from '../components/global/nav'
 import { Figtree } from 'next/font/google'
 import localFont from 'next/font/local'
-import Footer from './components/global/footer'
-import ThemeProvider from './components/global/ThemeProvider'
+import Footer from '../components/global/footer'
+import ThemeProvider from '../components/global/ThemeProvider'
 import type { Metadata } from 'next'
 import type { ReactNode } from 'react'
 
 const newake = localFont({
-  src: '../public/fonts/Newake-Font-Demo.otf',
+  src: '../../public/fonts/Newake-Font-Demo.otf',
   variable: '--font-newake',
 })
 

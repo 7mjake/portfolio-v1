@@ -1,6 +1,8 @@
-import HeroSection from './components/work/HeroSection'
-import CoreValues from './components/work/CoreValues'
-import Projects from './components/work/Projects'
+import HeroSection from '../components/work/HeroSection'
+import CoreValues from '../components/work/CoreValues'
+import Projects from '../components/work/Projects'
+
+export const dynamic = 'force-dynamic'
 
 export default function Home() {
   return (

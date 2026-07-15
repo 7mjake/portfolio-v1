@@ -2,7 +2,7 @@
 
 import { Pause, Play } from 'feather-icons-react'
 import { useRef, useState } from 'react'
-import type { VideoMedia as VideoMediaType } from '../../data/caseStudies'
+import type { VideoMedia as VideoMediaType } from '../../types/content'
 
 type VideoMediaProps = {
   media: VideoMediaType

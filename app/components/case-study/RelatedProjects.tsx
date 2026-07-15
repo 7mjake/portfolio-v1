@@ -4,18 +4,14 @@ import clsx from 'clsx'
 import Heading from '../global/Heading'
 import PageSection from '../global/PageSection'
 import StatusChip, { StatusChipGroup } from '../global/StatusChip'
-import { projects } from '../../data/projects'
+import type { ProjectCard } from '../../types/content'
 
 type RelatedProjectsProps = {
-  slugs: string[]
+  projects: ProjectCard[]
 }
 
-export default function RelatedProjects({ slugs }: RelatedProjectsProps) {
-  const relatedProjects = slugs
-    .map(slug => projects.find(project => project.slug === slug))
-    .filter(project => project !== undefined)
-
-  if (relatedProjects.length === 0) return null
+export default function RelatedProjects({ projects }: RelatedProjectsProps) {
+  if (projects.length === 0) return null
 
   return (
     <PageSection containerClassName="gap-10">
@@ -28,12 +24,12 @@ export default function RelatedProjects({ slugs }: RelatedProjectsProps) {
         </Heading>
       </div>
       <div className="border-primary bg-primary grid gap-[3px] border-[3px] md:grid-cols-2">
-        {relatedProjects.map(project => {
+        {projects.map(project => {
           const content = (
             <>
               <Image
                 src={project.image}
-                alt=""
+                alt={project.imageAlt}
                 width={600}
                 height={600}
                 className="aspect-square w-full object-cover"

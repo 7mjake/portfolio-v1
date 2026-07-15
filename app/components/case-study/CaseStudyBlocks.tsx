@@ -2,7 +2,7 @@ import Image from 'next/image'
 import clsx from 'clsx'
 import Heading from '../global/Heading'
 import PageSection from '../global/PageSection'
-import type { CaseStudyBlock } from '../../data/caseStudies'
+import type { CaseStudyBlock } from '../../types/content'
 import CaseStudyMedia from './CaseStudyMedia'
 import RichText from './RichText'
 

@@ -7,6 +7,9 @@
 
 # testing
 /coverage
+/playwright-report
+/test-results
+*.tsbuildinfo
 
 # production
 /build
@@ -14,6 +17,7 @@
 # Next.js
 /.next/
 /out/
+/media/
 
 # misc
 .DS_Store
