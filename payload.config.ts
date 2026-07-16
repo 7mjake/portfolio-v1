@@ -1,6 +1,7 @@
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { postgresAdapter } from '@payloadcms/db-postgres'
+import { resendAdapter } from '@payloadcms/email-resend'
 import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { vercelBlobStorage } from '@payloadcms/storage-vercel-blob'
 import { buildConfig } from 'payload'
@@ -41,6 +42,13 @@ export default buildConfig({
   graphQL: { disable: true },
   cors: [env.serverURL],
   csrf: [env.serverURL],
+  ...(env.email ? {
+    email: resendAdapter({
+      apiKey: env.email.resendAPIKey,
+      defaultFromAddress: env.email.fromAddress,
+      defaultFromName: 'Jake Martin Portfolio',
+    }),
+  } : {}),
   secret: env.payloadSecret,
   serverURL: env.serverURL,
   sharp,

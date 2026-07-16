@@ -15,6 +15,8 @@ Disable Neon's branch-per-Preview integration. Preview variables must never cont
 
 Configure all variables documented in `.env.example`. Vercel-hosted environments also require `BLOB_READ_WRITE_TOKEN`. Set `APP_ENV=staging` on Preview/stage and `APP_ENV=production` on Production. Vercel's deployment URL takes precedence for the active origin, so preview links do not point at production.
 
+Production additionally requires `EMAIL_FROM` and `RESEND_API_KEY`. Verify the sender domain in Resend before setting `EMAIL_FROM`; this provides administrator password-recovery email. Staging intentionally retains Payload's console email adapter.
+
 Local development uses staging credentials but defaults to the gitignored `media/` directory. Set `USE_VERCEL_BLOB=true` only when deliberately testing the nonproduction Blob store. Pull only staging-scoped variables into `.env.local`.
 
 ## Administrator and editorial workflow

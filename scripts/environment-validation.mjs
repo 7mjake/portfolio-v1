@@ -24,6 +24,11 @@ export function validateResourceIsolation(env) {
     if (!env[name]) throw new Error(`${name} is required`)
   }
   new URL(env.NEXT_PUBLIC_SERVER_URL)
+  if (env.APP_ENV === 'production') {
+    for (const name of ['EMAIL_FROM', 'RESEND_API_KEY']) {
+      if (!env[name]) throw new Error(`${name} is required in production`)
+    }
+  }
   if (env.APP_ENV === 'production' && env.BLOB_PUBLIC_HOSTNAME !== env.PRODUCTION_BLOB_HOSTNAME) {
     throw new Error('Production must use the production Blob store')
   }
