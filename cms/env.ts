@@ -38,13 +38,6 @@ export function getPayloadEnvironment() {
   const productionHost = process.env.PRODUCTION_NEON_HOST
   const blobHost = process.env.BLOB_PUBLIC_HOSTNAME
   const productionBlobHost = process.env.PRODUCTION_BLOB_HOSTNAME
-  const email = appEnv === 'production'
-    ? {
-        fromAddress: required('EMAIL_FROM'),
-        resendAPIKey: required('RESEND_API_KEY'),
-      }
-    : undefined
-
   if (appEnv === 'production') {
     if (productionHost && database.hostname !== productionHost) {
       throw new Error('Production must use the configured production Neon host')
@@ -71,6 +64,5 @@ export function getPayloadEnvironment() {
     previewSecret: required('PREVIEW_SECRET'),
     serverURL: getServerURL(),
     useBlob: Boolean(process.env.VERCEL || process.env.USE_VERCEL_BLOB === 'true'),
-    email,
   }
 }

@@ -18,11 +18,11 @@ describe('environment safeguards', () => {
   it('rejects a pooled migration URL', () => expect(() => validateDatabasePair({ ...staging, DATABASE_URL_UNPOOLED: staging.DATABASE_URL })).toThrow(/direct Neon/))
   it('rejects mismatched endpoints', () => expect(() => validateDatabasePair({ ...staging, DATABASE_URL_UNPOOLED: staging.DATABASE_URL_UNPOOLED.replace('ep-stage', 'ep-other') })).toThrow(/same Neon endpoint/))
   it('rejects production Blob in staging', () => expect(() => validateResourceIsolation({ ...staging, BLOB_PUBLIC_HOSTNAME: staging.PRODUCTION_BLOB_HOSTNAME })).toThrow(/production Blob/))
-  it('requires password-recovery email settings in production', () => expect(() => validateResourceIsolation({
+  it('accepts production without an email provider configured', () => expect(validateResourceIsolation({
     ...staging,
     APP_ENV: 'production',
     DATABASE_URL: staging.DATABASE_URL.replace('ep-stage', 'ep-production'),
     DATABASE_URL_UNPOOLED: staging.DATABASE_URL_UNPOOLED.replace('ep-stage', 'ep-production'),
     BLOB_PUBLIC_HOSTNAME: staging.PRODUCTION_BLOB_HOSTNAME,
-  })).toThrow(/EMAIL_FROM/))
+  }).directHost).toBe('ep-production.us-east-2.aws.neon.tech'))
 })
