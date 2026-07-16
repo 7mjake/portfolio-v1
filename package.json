@@ -27,7 +27,7 @@
     "payload:migrate": "node scripts/run-payload-migrations.mjs migrate",
     "payload:migrate-status": "node scripts/run-payload-migrations.mjs migrate:status",
     "cms:validate-env": "node scripts/validate-environment.mjs",
-    "cms:import": "tsx scripts/import-content.ts",
+    "cms:import": "node --env-file=.env.local --import tsx scripts/import-content.ts",
     "vercel-build": "node scripts/vercel-build.mjs"
   },
   "dependencies": {

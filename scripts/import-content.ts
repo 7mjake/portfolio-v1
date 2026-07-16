@@ -23,6 +23,8 @@ report.environment = environment
 const payload = report.dryRun ? null : await getPayload({ config })
 const root = process.cwd()
 const mediaIDs = new Map<string, number>()
+const usesVercelBlob = process.env.USE_VERCEL_BLOB === 'true' || Boolean(process.env.VERCEL)
+const blobPublicHost = process.env.BLOB_PUBLIC_HOSTNAME
 
 const mediaSources = new Map<string, { alt: string; poster?: string }>()
 for (const project of projects) mediaSources.set(project.image, { alt: `${project.title} project cover` })
@@ -44,15 +46,23 @@ async function upsertMedia(sourcePath: string, meta: { alt: string; poster?: str
   if (report.dryRun) { report.media.created++; return }
   const existing = await payload!.find({ collection: 'media', where: { sourcePath: { equals: sourcePath } }, limit: 2, overrideAccess: true })
   if (existing.totalDocs > 1) throw new Error(`Ambiguous media sourcePath: ${sourcePath}`)
-  if (existing.docs[0]?.sourceChecksum === checksum) { mediaIDs.set(sourcePath, existing.docs[0].id); report.media.skipped++; return }
+  const existingMedia = existing.docs[0]
+  const storedInActiveBlob = !usesVercelBlob || Boolean(
+    blobPublicHost && existingMedia?.url?.startsWith(`https://${blobPublicHost}/`)
+  )
+  if (existingMedia?.sourceChecksum === checksum && storedInActiveBlob) {
+    mediaIDs.set(sourcePath, existingMedia.id)
+    report.media.skipped++
+    return
+  }
   const poster = meta.poster ? mediaIDs.get(meta.poster) : undefined
   const file = { data, mimetype: mime(localPath), name: path.basename(localPath), size: data.length }
   const input = { alt: meta.alt, poster, sourcePath, sourceChecksum: checksum }
-  const record = existing.docs[0]
-    ? await payload!.update({ collection: 'media', id: existing.docs[0].id, data: input, file, overrideAccess: true })
+  const record = existingMedia
+    ? await payload!.update({ collection: 'media', id: existingMedia.id, data: input, file, overrideAccess: true })
     : await payload!.create({ collection: 'media', data: input, file, overrideAccess: true })
   mediaIDs.set(sourcePath, record.id)
-  report.media[existing.docs[0] ? 'updated' : 'created']++
+  report.media[existingMedia ? 'updated' : 'created']++
 }
 
 function mime(filename: string) {
